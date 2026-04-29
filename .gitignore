@@ -1,6 +1,8 @@
 # OMC / Claude Code state
 .omc/
-.claude/
+.claude/*
+!.claude/skills/
+!.claude/skills/**
 *.log
 
 # Node
