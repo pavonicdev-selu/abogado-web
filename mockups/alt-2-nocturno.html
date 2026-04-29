@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alt 2 · Despacho Nocturno — Núñez·Pareja·Romero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Manrope:wght@300..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0E0D0B; --bg-2:#161412; --ink:#F2EADC;
+    --gold:#C8A36C; --gold-2:#A4854E; --burg:#5C2424;
+    --muted:#8C8579; --line:#2A2622;
+    --max:1320px; --pad:clamp(20px,4vw,56px);
+  }
+  *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--ink)}
+  body{font-family:"Manrope",sans-serif;font-size:16px;line-height:1.6;
+    background-image:radial-gradient(ellipse at 20% 0%, rgba(200,163,108,.08), transparent 50%),
+                     radial-gradient(ellipse at 100% 100%, rgba(92,36,36,.12), transparent 50%);
+  }
+  h1,h2,h3,.serif{font-family:"Cormorant Garamond",serif;font-weight:300;letter-spacing:-.005em;line-height:1.05}
+  a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  ::selection{background:var(--gold);color:var(--bg)}
+
+  header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+  .brand{font-family:"Cormorant Garamond";font-size:24px;letter-spacing:.04em}
+  .brand i{color:var(--gold);font-style:italic}
+  nav.menu{display:flex;gap:32px;font-size:13px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+  nav.menu a:hover{color:var(--gold)}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:1px solid var(--gold);color:var(--gold);font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;transition:.3s}
+  .btn:hover{background:var(--gold);color:var(--bg)}
+  .btn.solid{background:var(--gold);color:var(--bg)}
+  .btn.solid:hover{background:transparent;color:var(--gold)}
+  @media(max-width:880px){nav.menu{display:none}}
+
+  /* HERO — centered editorial luxury */
+  .hero{padding:clamp(80px,10vw,160px) 0 clamp(40px,6vw,80px);text-align:center;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:18%;left:50%;transform:translateX(-50%);width:90%;max-width:900px;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(200,163,108,.07),transparent 65%);pointer-events:none}
+  .ornament{display:flex;align-items:center;justify-content:center;gap:14px;font-size:11.5px;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);margin-bottom:42px}
+  .ornament::before,.ornament::after{content:"";width:60px;height:1px;background:var(--gold);opacity:.6}
+  .hero h1{font-size:clamp(56px,9vw,148px);margin:0;font-weight:300;letter-spacing:-.01em}
+  .hero h1 i{font-style:italic;color:var(--gold);font-weight:300}
+  .hero .sub{margin:36px auto 0;max-width:54ch;font-size:18px;color:var(--muted);line-height:1.65}
+  .cta-row{display:flex;justify-content:center;gap:14px;margin-top:44px;flex-wrap:wrap}
+
+  .marquee{
+    border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+    margin-top:80px;padding:18px 0;overflow:hidden;white-space:nowrap;
+    font-family:"Cormorant Garamond";font-style:italic;font-size:18px;color:var(--muted);
+    -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+            mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  }
+  .marquee div{display:inline-block;animation:scroll 38s linear infinite}
+  .marquee span{margin:0 32px}
+  .marquee em{color:var(--gold);font-style:italic}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  section{padding:clamp(90px,11vw,150px) 0}
+  .sec h2{font-size:clamp(46px,7vw,108px);margin:0 0 22px;max-width:18ch}
+  .sec h2 i{font-style:italic;color:var(--gold)}
+  .sec p.lead{font-size:17px;color:var(--muted);max-width:54ch;margin:0 0 64px}
+
+  /* AREAS */
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  @media(max-width:880px){.areas{grid-template-columns:1fr}}
+  .area{padding:48px 32px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;cursor:default;transition:background .35s}
+  .area:last-child{border-right:0}
+  .area:hover{background:var(--bg-2)}
+  .area .roman{font-family:"Cormorant Garamond";font-style:italic;color:var(--gold);font-size:14px;letter-spacing:.08em}
+  .area h3{font-size:46px;margin:14px 0 18px;font-weight:300}
+  .area p{margin:0 0 22px;color:var(--muted);font-size:14.5px}
+  .area .arr{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+
+  /* TEAM — split editorial */
+  .team{display:grid;gap:120px}
+  .person{display:grid;grid-template-columns:1fr 1.1fr;gap:64px;align-items:center}
+  .person:nth-child(even){grid-template-columns:1.1fr 1fr;direction:rtl}
+  .person:nth-child(even) > *{direction:ltr}
+  @media(max-width:880px){.person,.person:nth-child(even){grid-template-columns:1fr;direction:ltr;gap:32px}}
+  .person figure{margin:0;aspect-ratio:4/5;overflow:hidden;background:var(--bg-2);position:relative}
+  .person figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(.95);transition:filter .8s}
+  .person:hover figure img{filter:grayscale(0) contrast(1.05)}
+  .person figure::after{content:"";position:absolute;inset:0;border:1px solid var(--gold);transform:translate(14px,14px);pointer-events:none;opacity:.4}
+  .person h3{font-size:clamp(40px,5vw,68px);margin:0 0 6px;font-weight:300;letter-spacing:-.01em}
+  .person h3 i{font-style:italic;color:var(--gold)}
+  .person .role{font-family:"Cormorant Garamond";font-style:italic;color:var(--gold);font-size:18px;margin-bottom:24px}
+  .person .bio{font-size:16px;color:var(--ink);max-width:46ch;line-height:1.65}
+  .person .stats{display:flex;gap:38px;margin:28px 0;padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .person .stats div b{font-family:"Cormorant Garamond";font-size:36px;font-style:italic;color:var(--gold);display:block;font-weight:300;line-height:1}
+  .person .stats div small{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+
+  /* CTA */
+  .closing{text-align:center;padding:140px 0;border-top:1px solid var(--line)}
+  .closing h2{font-size:clamp(48px,7vw,110px);margin:0 0 26px;font-style:italic}
+  .closing p{color:var(--muted);max-width:48ch;margin:0 auto 36px;font-size:17px}
+
+  footer{padding:50px 0;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+</style></head>
+<body>
+
+<header><div class="wrap nav">
+  <div class="brand">Núñez · Pareja · <i>Romero</i></div>
+  <nav class="menu"><a>Áreas</a><a>Equipo</a><a>Casos</a><a>Contacto</a></nav>
+  <a class="btn solid">Consulta gratuita</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <div class="ornament">— Calle Larios · Málaga · MMXXVI —</div>
+  <h1>Defendemos sus<br>derechos con<br><i>discreción</i> y <i>rigor.</i></h1>
+  <p class="sub">Despacho boutique fundado hace más de veinticinco años. Tres titulares que asumen personalmente cada caso. Civil, laboral y penal — con la calma de saber lo que se está haciendo.</p>
+  <div class="cta-row">
+    <a class="btn solid">Primera consulta gratis</a>
+    <a class="btn">WhatsApp directo</a>
+  </div>
+</div></section>
+
+<div class="marquee"><div>
+  <span>+25 años de ejercicio</span><em>·</em>
+  <span>Colegio de Abogados de Málaga</span><em>·</em>
+  <span>900+ procedimientos resueltos</span><em>·</em>
+  <span>Guardia penal 24 h</span><em>·</em>
+  <span>Calle Larios 5 · 2ª planta</span><em>·</em>
+  <span>+25 años de ejercicio</span><em>·</em>
+  <span>Colegio de Abogados de Málaga</span><em>·</em>
+  <span>900+ procedimientos resueltos</span><em>·</em>
+  <span>Guardia penal 24 h</span><em>·</em>
+  <span>Calle Larios 5 · 2ª planta</span><em>·</em>
+</div></div>
+
+<section class="wrap sec">
+  <h2>Tres áreas. <i>Una vocación.</i></h2>
+  <p class="lead">No somos un despacho generalista. Hemos elegido las tres ramas donde podemos hacer un trabajo extraordinario — y declinamos lo demás.</p>
+  <div class="areas">
+    <article class="area"><span class="roman">— i —</span><h3><i>Civil</i></h3><p>Tráfico, herencias, contratos. Defendemos lo que es suyo cuando alguien decide que no.</p><span class="arr">Conocer más →</span></article>
+    <article class="area"><span class="roman">— ii —</span><h3><i>Laboral</i></h3><p>Despidos, incapacidades, accidentes de trabajo. Donde más se decide su economía familiar.</p><span class="arr">Conocer más →</span></article>
+    <article class="area"><span class="roman">— iii —</span><h3><i>Penal</i></h3><p>Asistencia 24 horas. Defensa firme y discreta. Vial, patrimonio, violencia doméstica.</p><span class="arr">Conocer más →</span></article>
+  </div>
+</section>
+
+<section class="wrap sec">
+  <h2>Tres titulares.<br><i>Tres firmas</i> distintas.</h2>
+  <p class="lead">Cada uno con voz propia. Cada cliente conoce a quien le representa.</p>
+
+  <div class="team">
+
+    <article class="person">
+      <figure><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80" alt="Andrés Núñez Lara"></figure>
+      <div>
+        <h3>Andrés <i>Núñez</i> Lara</h3>
+        <div class="role">Titular · Penal & Seguridad Vial</div>
+        <p class="bio">Veintisiete años en jurisdicción penal. Defensor de oficio durante una década. Lleva personalmente las guardias 24 horas. Discreción absoluta es algo más que una promesa: es un hábito.</p>
+        <div class="stats">
+          <div><b>27</b><small>Años en sala</small></div>
+          <div><b>600+</b><small>Procedimientos</small></div>
+          <div><b>4421</b><small>Col. ICAMÁLAGA</small></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="person">
+      <figure><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80" alt="Lucía Pareja Ortega"></figure>
+      <div>
+        <h3>Lucía <i>Pareja</i> Ortega</h3>
+        <div class="role">Titular · Laboral & Seguridad Social</div>
+        <p class="bio">Veinte años defendiendo trabajadores en despidos, incapacidades y accidentes laborales. Premio del ICAMÁLAGA 2019 al mejor procedimiento laboral. Atiende también en inglés y francés.</p>
+        <div class="stats">
+          <div><b>20</b><small>Años en sala</small></div>
+          <div><b>1</b><small>Premio ICAMÁLAGA</small></div>
+          <div><b>5108</b><small>Col. ICAMÁLAGA</small></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="person">
+      <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80" alt="Carmen Romero Salas"></figure>
+      <div>
+        <h3>Carmen <i>Romero</i> Salas</h3>
+        <div class="role">Titular · Civil & Familia</div>
+        <p class="bio">Diecinueve años en derecho civil con foco en tráfico, herencias y derecho bancario. Mediadora civil y mercantil colegiada. Acompaña casos largos sin perder la calma — ni a usted.</p>
+        <div class="stats">
+          <div><b>19</b><small>Años en sala</small></div>
+          <div><b>500+</b><small>Casos civiles</small></div>
+          <div><b>5742</b><small>Col. ICAMÁLAGA</small></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<div class="closing"><div class="wrap">
+  <h2>Hablemos.</h2>
+  <p>La primera consulta es gratuita. Cuéntenos su caso en una hora — sin compromiso, sin tarifas escondidas, sin promesas vacías.</p>
+  <a class="btn solid">Reservar consulta</a>
+</div></div>
+
+<footer><div class="wrap row">
+  <div>© MMXXVI · Núñez · Pareja · Romero</div>
+  <div>Calle Larios 5 · Málaga · ICAMÁLAGA 4421·5108·5742</div>
+</div></footer>
+
+</body></html>

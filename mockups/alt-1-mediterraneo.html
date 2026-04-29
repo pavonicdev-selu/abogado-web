@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Alt 1 · Mediterráneo Moderno — Núñez·Pareja·Romero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sand:#EFE9DC; --sand-2:#E3DAC4; --ink:#0F1B2D;
+    --sea:#2E5A7C; --sea-2:#1B3D5A; --sun:#D9854B;
+    --muted:#5A6573; --line:#CFC5A8;
+    --max:1340px; --pad:clamp(20px,4vw,56px);
+  }
+  *{box-sizing:border-box} html,body{margin:0;background:var(--sand);color:var(--ink)}
+  body{font-family:"Inter Tight",sans-serif;font-size:16px;line-height:1.55}
+  h1,h2,h3,.serif{font-family:"Instrument Serif",serif;font-weight:400;letter-spacing:-.01em;line-height:1.02}
+  a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  header{position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--sand) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:24px}
+  .brand{font-family:"Instrument Serif";font-size:24px;letter-spacing:-.02em}
+  .brand i{color:var(--sea);font-style:italic}
+  nav.menu{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+  nav.menu a:hover{color:var(--sea)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--ink);color:var(--sand);border-radius:0;font-size:13.5px;letter-spacing:.04em;text-transform:uppercase;transition:background .25s}
+  .btn:hover{background:var(--sea)}
+  .btn.accent{background:var(--sun);color:var(--ink)}
+  .btn.accent:hover{background:var(--ink);color:var(--sand)}
+  @media(max-width:880px){nav.menu{display:none}}
+
+  /* HERO — fotografía grande con copy superpuesta */
+  .hero{position:relative;padding:0;min-height:88vh;display:grid;grid-template-columns:1.2fr 1fr;gap:0}
+  @media(max-width:980px){.hero{grid-template-columns:1fr;min-height:auto}}
+  .hero-text{padding:clamp(60px,8vw,120px) var(--pad) clamp(60px,8vw,100px);display:flex;flex-direction:column;justify-content:center}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-size:12px;text-transform:uppercase;letter-spacing:.24em;color:var(--sea);margin-bottom:34px}
+  .eyebrow::before{content:"";width:50px;height:1px;background:var(--sea)}
+  .hero h1{font-size:clamp(56px,8vw,118px);margin:0 0 32px;letter-spacing:-.02em}
+  .hero h1 i{font-style:italic;color:var(--sea)}
+  .hero p{font-size:19px;color:var(--muted);max-width:48ch;line-height:1.55;margin:0 0 36px}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-img{position:relative;overflow:hidden;background:var(--sand-2);min-height:60vh}
+  .hero-img img{width:100%;height:100%;object-fit:cover;filter:saturate(.9) contrast(1.02)}
+  .hero-img .overlay{position:absolute;inset:0;background:linear-gradient(120deg, rgba(15,27,45,.15), transparent 40%)}
+  .hero-img .quote{position:absolute;left:32px;bottom:32px;right:32px;color:#EFE9DC;font-family:"Instrument Serif";font-style:italic;font-size:22px;line-height:1.3;max-width:36ch;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+  .hero-img .quote small{display:block;font-style:normal;font-family:"Inter Tight";font-size:11px;letter-spacing:.18em;text-transform:uppercase;margin-top:14px;opacity:.85}
+
+  .strip{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--sand-2)}
+  .strip > div{padding:22px var(--pad);border-right:1px solid var(--line);font-size:13.5px;color:var(--ink)}
+  .strip > div:last-child{border-right:0}
+  .strip b{font-family:"Instrument Serif";font-size:32px;display:block;letter-spacing:-.02em;color:var(--sea);margin-bottom:2px}
+  @media(max-width:780px){.strip{grid-template-columns:1fr 1fr}.strip > div{border-bottom:1px solid var(--line)}}
+
+  /* AREAS */
+  section{padding:clamp(80px,10vw,140px) 0}
+  .sec h2{font-size:clamp(40px,6vw,84px);margin:0 0 18px;max-width:18ch}
+  .sec h2 i{font-style:italic;color:var(--sea)}
+  .sec p.lead{font-size:17px;color:var(--muted);max-width:56ch;margin:0 0 64px}
+
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+  @media(max-width:880px){.areas{grid-template-columns:1fr}}
+  .area{background:#FFF8E9;border:1px solid var(--line);padding:36px;display:flex;flex-direction:column;gap:14px;transition:transform .35s,box-shadow .35s}
+  .area:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(15,27,45,.18)}
+  .area .ico{width:54px;height:54px;border-radius:50%;background:var(--sea);color:var(--sand);display:grid;place-items:center;font-family:"Instrument Serif";font-style:italic;font-size:24px}
+  .area:nth-child(2) .ico{background:var(--sun);color:var(--ink)}
+  .area:nth-child(3) .ico{background:var(--ink);color:var(--sand)}
+  .area h3{font-size:34px;margin:8px 0 4px}
+  .area p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.6;flex:1}
+  .area .arr{margin-top:12px;font-size:13px;color:var(--sea);text-transform:uppercase;letter-spacing:.14em}
+
+  /* TEAM */
+  .team-bg{background:var(--ink);color:var(--sand)}
+  .team-bg .sec h2 i{color:var(--sun)}
+  .team-bg .sec p.lead{color:#A8B0BA}
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  @media(max-width:980px){.team{grid-template-columns:1fr}}
+  .person figure{margin:0;aspect-ratio:3/4;overflow:hidden;background:#1B2A3F;position:relative}
+  .person figure img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15) contrast(1.05);transition:filter .6s}
+  .person:hover figure img{filter:grayscale(0)}
+  .person figure::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(15,27,45,.85))}
+  .person h3{font-size:28px;margin:22px 0 4px;color:var(--sand)}
+  .person .role{color:var(--sun);font-style:italic;font-family:"Instrument Serif";font-size:16px;margin-bottom:12px}
+  .person p{font-size:14px;color:#A8B0BA;line-height:1.6;margin:0 0 18px}
+  .person .meta{font-size:12px;color:#7A8290;border-top:1px solid #1B2A3F;padding-top:14px;display:flex;justify-content:space-between}
+
+  /* CTA bottom */
+  .cta-block{background:var(--sun);color:var(--ink);padding:80px 0;text-align:center}
+  .cta-block h2{font-size:clamp(40px,6vw,76px);margin:0 0 14px}
+  .cta-block p{margin:0 auto 30px;max-width:48ch;font-size:17px}
+
+  footer{background:var(--ink);color:#A8B0BA;padding:50px 0;font-size:13px}
+  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px}
+
+  ::selection{background:var(--sun);color:var(--ink)}
+</style></head>
+<body>
+
+<header><div class="wrap nav">
+  <div class="brand">Núñez · Pareja · <i>Romero</i></div>
+  <nav class="menu"><a>Áreas</a><a>Equipo</a><a>Casos</a><a>Contacto</a></nav>
+  <a class="btn accent">Consulta gratuita →</a>
+</div></header>
+
+<section class="hero">
+  <div class="hero-text">
+    <div class="eyebrow">Despacho · Calle Larios · Málaga</div>
+    <h1>Cuando todo<br>se complica,<br><i>alguien tiene</i><br><i>que escuchar.</i></h1>
+    <p>Veinticinco años defendiendo derechos en derecho civil, laboral y penal. Tres titulares que llevan personalmente cada caso — sin intermediarios, sin discursos.</p>
+    <div class="cta-row">
+      <a class="btn accent">Primera consulta gratis →</a>
+      <a class="btn">WhatsApp</a>
+    </div>
+  </div>
+  <div class="hero-img">
+    <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?auto=format&fit=crop&w=1400&q=80" alt="Despacho">
+    <div class="overlay"></div>
+    <div class="quote">"Sabemos que los conflictos legales pueden ser difíciles. Estamos aquí para defender sus derechos con cercanía y rigor."<small>— Lucía Pareja, titular laboral</small></div>
+  </div>
+</section>
+
+<div class="strip">
+  <div><b>+25</b>Años en ejercicio</div>
+  <div><b>900+</b>Procedimientos resueltos</div>
+  <div><b>87%</b>Tasa de éxito civil</div>
+  <div><b>24h</b>Guardia penal</div>
+</div>
+
+<section class="wrap sec">
+  <h2>Tres áreas. <i>Una vocación.</i></h2>
+  <p class="lead">Llevamos sólo lo que sabemos llevar bien. Civil, laboral y penal — con especialidades dentro de cada rama y respuesta en menos de 24 horas.</p>
+  <div class="areas">
+    <article class="area"><div class="ico">i</div><h3>Civil</h3><p>Tráfico, herencias, contratos, arrendamientos. Defendemos lo que es suyo cuando alguien decide que no.</p><span class="arr">Saber más →</span></article>
+    <article class="area"><div class="ico">ii</div><h3>Laboral</h3><p>Despidos, incapacidades, accidentes de trabajo. Donde más se decide su economía familiar.</p><span class="arr">Saber más →</span></article>
+    <article class="area"><div class="ico">iii</div><h3>Penal</h3><p>Asistencia 24h. Vial, patrimonio, violencia doméstica. Defensa firme, juicios sin teatro.</p><span class="arr">Saber más →</span></article>
+  </div>
+</section>
+
+<div class="team-bg"><section class="wrap sec">
+  <h2>Tres titulares. <i>Tres miradas</i><br>al mismo caso.</h2>
+  <p class="lead">Un abogado y dos abogadas con trayectorias propias. Cada cliente conoce a quien le representa — sin pasantes, sin terceros.</p>
+  <div class="team">
+    <article class="person">
+      <figure><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&h=1067&q=80" alt="Andrés"></figure>
+      <h3>Andrés Núñez Lara</h3><div class="role">Penal & Vial</div>
+      <p>Veintisiete años en jurisdicción penal. +600 procedimientos. Defensor de oficio durante una década.</p>
+      <div class="meta"><span>Col. 4421</span><a>LinkedIn ↗</a></div>
+    </article>
+    <article class="person">
+      <figure><img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&h=1067&q=80" alt="Lucía"></figure>
+      <h3>Lucía Pareja Ortega</h3><div class="role">Laboral & Seg. Social</div>
+      <p>Veinte años defendiendo trabajadores. Premio ICAMÁLAGA 2019. Habla inglés y francés.</p>
+      <div class="meta"><span>Col. 5108</span><a>LinkedIn ↗</a></div>
+    </article>
+    <article class="person">
+      <figure><img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&h=1067&q=80" alt="Carmen"></figure>
+      <h3>Carmen Romero Salas</h3><div class="role">Civil & Familia</div>
+      <p>Diecinueve años. Foco en tráfico, herencias y derecho bancario. Mediadora civil colegiada.</p>
+      <div class="meta"><span>Col. 5742</span><a>LinkedIn ↗</a></div>
+    </article>
+  </div>
+</section></div>
+
+<div class="cta-block"><div class="wrap">
+  <h2>Cuéntenos su caso<br>en una hora. Gratis.</h2>
+  <p>Sin compromiso, sin tarifas escondidas. Le decimos honestamente si merece la pena seguir adelante.</p>
+  <a class="btn">Reservar consulta →</a>
+</div></div>
+
+<footer><div class="wrap row">
+  <div>© 2026 Núñez · Pareja · Romero — Calle Larios 5, Málaga</div>
+  <div>ICAMÁLAGA 4421 · 5108 · 5742</div>
+</div></footer>
+
+</body></html>

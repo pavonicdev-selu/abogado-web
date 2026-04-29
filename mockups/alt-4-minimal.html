@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Núñez · Pareja · Romero — Abogados en Málaga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@400..500&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7;
+    --bg-2:#F0EFEA;
+    --bg-3:#E8E6DF;
+    --ink:#0A0A09;
+    --ink-2:#2E2E2B;
+    --muted:#7A7A73;
+    --line:#DEDCD3;
+    --accent:#2E4636;
+    --accent-2:#A8643F;
+    --max:1380px;
+    --pad:clamp(20px,3.5vw,52px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--bg);color:var(--ink)}
+  body{
+    font-family:"Geist",ui-sans-serif,system-ui,sans-serif;
+    font-size:15.5px;line-height:1.55;font-weight:380;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4,h5{font-weight:380;letter-spacing:-.03em;line-height:1.02}
+  .serif,em.s{font-family:"Newsreader",serif;font-style:italic;font-weight:300;letter-spacing:-.01em}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font:inherit;cursor:pointer;border:0;background:0}
+  .mono{font-family:"Geist Mono",ui-monospace,monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:400}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  ::selection{background:var(--ink);color:var(--bg)}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:40;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:saturate(160%) blur(14px);border-bottom:1px solid var(--line)}
+  .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:18px 0}
+  .brand{display:flex;align-items:center;gap:11px;font-size:15px;font-weight:500;letter-spacing:-.018em}
+  .brand .mk{position:relative;width:14px;height:14px;display:inline-block}
+  .brand .mk::before,.brand .mk::after{content:"";position:absolute;inset:0;border-radius:50%}
+  .brand .mk::before{background:var(--accent)}
+  .brand .mk::after{background:var(--accent-2);transform:translate(5px,0);mix-blend-mode:multiply;opacity:.85}
+  nav.menu{display:flex;gap:32px;font-size:14px;color:var(--ink-2);justify-self:center}
+  nav.menu a{position:relative;padding:6px 0;transition:color .25s}
+  nav.menu a::after{content:"";position:absolute;left:0;right:100%;bottom:2px;height:1px;background:var(--ink);transition:right .35s ease}
+  nav.menu a:hover::after{right:0}
+  .head-cta{display:flex;align-items:center;gap:18px}
+  .tel{font-size:13.5px;color:var(--ink-2);font-feature-settings:"tnum"}
+  .btn{display:inline-flex;align-items:center;gap:9px;padding:10px 18px;background:var(--ink);color:var(--bg);font-size:13px;font-weight:450;border-radius:999px;transition:background .25s, transform .2s, padding .25s}
+  .btn:hover{background:var(--accent);transform:translateY(-1px)}
+  .btn:hover .ic{transform:translateX(3px)}
+  .btn .ic{transition:transform .25s ease}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn.ghost:hover{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  @media(max-width:980px){nav.menu{display:none}.tel{display:none}}
+
+  /* HERO ────────────────────── */
+  .hero{position:relative;padding:clamp(40px,6vw,80px) 0 clamp(60px,8vw,120px);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:64px;align-items:end}
+  @media(max-width:980px){.hero-grid{grid-template-columns:1fr;gap:40px}}
+  .hero .eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:48px}
+  .hero .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);position:relative}
+  .hero .eyebrow .dot::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--accent);opacity:.4;animation:ping 2.4s ease-out infinite}
+  @keyframes ping{0%{transform:scale(1);opacity:.5}100%{transform:scale(2.5);opacity:0}}
+
+  .hero h1{
+    font-size:clamp(30px,4.2vw,60px);
+    font-weight:380;letter-spacing:-.025em;line-height:1.04;
+    margin-bottom:0;
+  }
+  .hero h1 .l1,.hero h1 .l2,.hero h1 .l3{display:block;opacity:0;transform:translateY(28px);animation:rise .9s cubic-bezier(.2,.8,.2,1) forwards}
+  .hero h1 .l1{animation-delay:.1s}
+  .hero h1 .l2{animation-delay:.22s}
+  .hero h1 .l3{animation-delay:.34s}
+  .hero h1 em{font-family:"Newsreader",serif;font-style:italic;font-weight:300;color:var(--accent);letter-spacing:-.025em}
+  .hero h1 .strike{position:relative;display:inline-block}
+  .hero h1 .strike::after{content:"";position:absolute;left:-1%;right:-1%;top:54%;height:8%;background:var(--accent-2);opacity:.85;transform-origin:left;transform:scaleX(0);animation:strike .7s .9s cubic-bezier(.2,.7,.2,1) forwards}
+  @keyframes strike{to{transform:scaleX(1)}}
+  @keyframes rise{to{opacity:1;transform:none}}
+
+  .hero-side{display:flex;flex-direction:column;gap:32px;opacity:0;animation:rise .9s .5s cubic-bezier(.2,.8,.2,1) forwards}
+  .hero-photo{position:relative;aspect-ratio:4/5;background:var(--bg-3);border-radius:6px;overflow:hidden}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.05) saturate(.92)}
+  .hero-photo .tag{position:absolute;top:16px;left:16px;padding:6px 12px;background:var(--bg);border-radius:999px;font-size:11px;letter-spacing:.06em;font-family:"Geist Mono",monospace;text-transform:uppercase;display:inline-flex;align-items:center;gap:8px}
+  .hero-photo .tag::before{content:"";width:5px;height:5px;border-radius:50%;background:#22A55A;animation:blink 1.6s ease-in-out infinite}
+  @keyframes blink{50%{opacity:.3}}
+  .hero-photo .caption{position:absolute;bottom:16px;left:16px;right:16px;color:#fff;font-size:13px;line-height:1.4;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+  .hero-photo .caption b{display:block;font-weight:500;font-size:14px;margin-bottom:2px}
+
+  .hero-bottom{display:grid;grid-template-columns:1.5fr 1fr;gap:48px;margin-top:80px;padding-top:42px;border-top:1px solid var(--line);align-items:center}
+  @media(max-width:880px){.hero-bottom{grid-template-columns:1fr;gap:24px}}
+  .hero-bottom p{font-size:18px;color:var(--ink-2);max-width:48ch;line-height:1.55;font-weight:380}
+  .hero-bottom p em{font-family:"Newsreader",serif;color:var(--accent);font-weight:400}
+  .cta-row{display:flex;gap:10px;flex-wrap:wrap}
+  .cta-row .btn{padding:13px 22px;font-size:14px}
+
+  /* METRICS ────────────────── */
+  .metrics{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-2)}
+  .metrics-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  .metrics-grid > div{padding:36px var(--pad);border-right:1px solid var(--line);position:relative;overflow:hidden}
+  .metrics-grid > div:last-child{border-right:0}
+  .metrics-grid b{font-size:clamp(22px,2.4vw,32px);font-weight:420;letter-spacing:-.022em;display:block;margin-bottom:6px;font-feature-settings:"tnum";line-height:1}
+  .metrics-grid b .unit{font-family:"Newsreader",serif;font-style:italic;color:var(--accent);font-size:.6em;font-weight:300;margin-left:2px}
+  .metrics-grid .mono{display:block}
+  @media(max-width:780px){.metrics-grid{grid-template-columns:1fr 1fr}.metrics-grid > div:nth-child(2){border-right:0}.metrics-grid > div:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+  /* SECTIONS ──────────────── */
+  section{padding:clamp(80px,10vw,160px) 0}
+  .sec-head{display:grid;grid-template-columns:auto 1fr auto;gap:48px;align-items:end;margin-bottom:72px}
+  @media(max-width:880px){.sec-head{grid-template-columns:1fr;gap:18px;margin-bottom:48px}}
+  .sec-head .mono{margin-bottom:14px;display:block}
+  .sec-head h2{font-size:clamp(24px,3vw,40px);font-weight:380;letter-spacing:-.022em;line-height:1.05;max-width:18ch}
+  .sec-head h2 em{font-family:"Newsreader",serif;font-style:italic;color:var(--accent);font-weight:300}
+  .sec-head .meta{color:var(--ink-2);font-size:15px;max-width:36ch;justify-self:end}
+  @media(max-width:880px){.sec-head .meta{justify-self:start}}
+
+  /* AREAS ─────────────────── */
+  .areas{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+  @media(max-width:980px){.areas{grid-template-columns:1fr}}
+  .area{
+    padding:48px 36px 40px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+    display:flex;flex-direction:column;gap:18px;transition:background .35s, padding .35s;
+    position:relative;overflow:hidden;cursor:pointer;
+  }
+  .area:last-child{border-right:0}
+  @media(max-width:980px){.area{border-right:0}}
+  .area::before{content:"";position:absolute;left:0;top:0;width:100%;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+  .area:hover::before{transform:scaleX(1)}
+  .area:hover{background:var(--bg-2);padding-top:54px;padding-bottom:46px}
+  .area .head{display:flex;justify-content:space-between;align-items:center}
+  .area .num{font-family:"Newsreader",serif;font-style:italic;font-size:18px;color:var(--accent)}
+  .area .icon{width:32px;height:32px;border-radius:50%;background:var(--bg-2);display:grid;place-items:center;font-size:13px;color:var(--ink-2);transition:background .3s, color .3s}
+  .area:hover .icon{background:var(--ink);color:var(--bg)}
+  .area h3{font-size:clamp(20px,2vw,26px);letter-spacing:-.018em;font-weight:450}
+  .area h3 em{font-family:"Newsreader",serif;font-style:italic;font-weight:300;color:var(--accent)}
+  .area p{font-size:14.5px;color:var(--ink-2);line-height:1.6;flex:1}
+  .area ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px;font-size:11.5px;color:var(--muted);font-family:"Geist Mono",monospace;text-transform:uppercase;letter-spacing:.04em}
+  .area ul li{padding:5px 10px;border:1px solid var(--line);border-radius:4px;transition:border-color .3s, color .3s}
+  .area:hover ul li{border-color:var(--ink);color:var(--ink)}
+  .area .arr{display:inline-flex;align-items:center;gap:10px;font-size:13.5px;color:var(--ink);margin-top:4px;font-weight:450;letter-spacing:-.005em}
+  .area .arr svg{transition:transform .3s ease}
+  .area:hover .arr svg{transform:translateX(5px)}
+
+  /* TEAM ──────────────────── */
+  .team{display:flex;flex-direction:column;gap:24px}
+  .person{
+    display:grid;grid-template-columns:1fr 1.4fr;gap:60px;align-items:center;
+    padding:32px 0;border-top:1px solid var(--line);
+  }
+  .person:nth-child(even){grid-template-columns:1.4fr 1fr}
+  .person:nth-child(even) .person-photo{order:2}
+  .person:last-child{border-bottom:1px solid var(--line)}
+  @media(max-width:880px){.person,.person:nth-child(even){grid-template-columns:1fr;gap:24px}.person:nth-child(even) .person-photo{order:0}}
+  .person-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:4px;background:var(--bg-3)}
+  .person-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04) saturate(.92);transition:transform 1s cubic-bezier(.2,.7,.2,1), filter .5s}
+  .person:hover .person-photo img{transform:scale(1.04);filter:contrast(1.08) saturate(1)}
+  .person-photo .idx{position:absolute;top:18px;left:18px;font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.08em;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.5);text-transform:uppercase}
+  .person-photo .area-tag{position:absolute;bottom:18px;left:18px;padding:6px 12px;background:rgba(255,255,255,.92);font-size:11px;font-family:"Geist Mono",monospace;letter-spacing:.06em;text-transform:uppercase;border-radius:4px;color:var(--ink)}
+  .person-info .num{display:block;font-family:"Newsreader",serif;font-style:italic;color:var(--accent);font-size:18px;margin-bottom:18px}
+  .person-info h3{font-size:clamp(22px,2.4vw,30px);font-weight:420;letter-spacing:-.02em;margin-bottom:6px;line-height:1.1}
+  .person-info h3 em{font-family:"Newsreader",serif;font-style:italic;color:var(--accent);font-weight:300}
+  .person-info .role{font-size:15px;color:var(--accent);margin-bottom:24px;font-family:"Newsreader",serif;font-style:italic;font-size:18px}
+  .person-info p{font-size:16px;color:var(--ink-2);line-height:1.6;max-width:50ch;margin-bottom:28px}
+  .person-info .meta{display:grid;grid-template-columns:repeat(3,auto);gap:36px;padding-top:24px;border-top:1px solid var(--line);max-width:520px}
+  .person-info .meta div .mono{display:block;margin-bottom:4px}
+  .person-info .meta div b{font-size:18px;font-weight:450;letter-spacing:-.01em;font-feature-settings:"tnum"}
+  @media(max-width:520px){.person-info .meta{grid-template-columns:1fr 1fr}}
+
+  /* CASES ─────────────────── */
+  .cases-wrap{background:var(--ink);color:var(--bg);position:relative;overflow:hidden}
+  .cases-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 100% 0%, rgba(46,70,54,.4),transparent 60%);pointer-events:none}
+  .cases-wrap .sec-head h2{color:var(--bg)}
+  .cases-wrap .sec-head h2 em{color:#A8C49B}
+  .cases-wrap .sec-head .meta{color:#9A9A92}
+  .cases-wrap .sec-head .mono{color:#9A9A92}
+  .cases{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:#1A1A18;border:1px solid #1A1A18;border-radius:6px;overflow:hidden}
+  @media(max-width:880px){.cases{grid-template-columns:1fr}}
+  .case{background:var(--ink);padding:36px 32px 32px;display:flex;flex-direction:column;gap:14px;min-height:300px;transition:background .3s;cursor:pointer;position:relative}
+  .case:hover{background:#16161A}
+  .case .tag{font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#A8C49B}
+  .case .num{font-size:clamp(26px,2.8vw,38px);font-weight:420;letter-spacing:-.022em;line-height:1;color:var(--bg);font-feature-settings:"tnum"}
+  .case .num em{font-family:"Newsreader",serif;font-style:italic;color:#A8C49B;font-weight:300}
+  .case h4{font-size:18px;font-weight:450;letter-spacing:-.01em;color:var(--bg)}
+  .case p{font-size:14px;color:#9A9A92;line-height:1.6;flex:1}
+  .case .ref{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#7A7A73;padding-top:14px;border-top:1px solid #1A1A18}
+
+  /* TESTIMONIALS ──────────── */
+  .test-wrap{padding:clamp(60px,8vw,100px) 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .test-strip{display:flex;gap:24px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 8px;scrollbar-width:none}
+  .test-strip::-webkit-scrollbar{display:none}
+  .test{flex:0 0 460px;scroll-snap-align:start;padding:32px;background:var(--bg-2);border-radius:8px;display:flex;flex-direction:column;gap:24px;min-height:280px}
+  @media(max-width:560px){.test{flex:0 0 88vw}}
+  .test .stars{display:flex;gap:4px;color:var(--accent-2);font-size:14px}
+  .test blockquote{font-family:"Newsreader",serif;font-size:21px;line-height:1.4;font-weight:380;letter-spacing:-.005em;flex:1}
+  .test .who{display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid var(--line)}
+  .test .avatar{width:44px;height:44px;border-radius:50%;background:var(--accent);color:var(--bg);display:grid;place-items:center;font-family:"Newsreader";font-style:italic;font-size:18px}
+  .test:nth-child(2) .avatar{background:var(--accent-2)}
+  .test:nth-child(3) .avatar{background:var(--ink)}
+  .test:nth-child(4) .avatar{background:var(--muted)}
+  .test .who b{display:block;font-size:14px;font-weight:500}
+  .test .who small{font-size:12px;color:var(--muted);font-family:"Geist Mono",monospace;letter-spacing:.04em;text-transform:uppercase}
+
+  .scroll-hint{display:flex;align-items:center;gap:12px;padding:0 var(--pad);margin-top:18px;color:var(--muted);font-size:11.5px;font-family:"Geist Mono",monospace;letter-spacing:.06em;text-transform:uppercase}
+  .scroll-hint .line{flex:1;height:1px;background:var(--line);position:relative;overflow:hidden}
+  .scroll-hint .line::after{content:"";position:absolute;left:0;width:30%;height:100%;background:var(--ink);animation:slide 3s ease-in-out infinite}
+  @keyframes slide{0%,100%{transform:translateX(-30%)}50%{transform:translateX(330%)}}
+
+  /* FAQ ───────────────────── */
+  .faq-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:80px;align-items:start}
+  @media(max-width:880px){.faq-grid{grid-template-columns:1fr;gap:32px}}
+  .faq-grid > div:first-child{position:sticky;top:90px}
+  .faq-grid h2{font-size:clamp(22px,2.6vw,32px);font-weight:420;letter-spacing:-.02em;line-height:1.1;margin-bottom:16px}
+  .faq-grid h2 em{font-family:"Newsreader",serif;font-style:italic;color:var(--accent);font-weight:300}
+  .faq-grid .meta{color:var(--ink-2);font-size:15px;max-width:32ch}
+  .faq{}
+  .faq details{border-bottom:1px solid var(--line);padding:24px 0;transition:padding .3s}
+  .faq details:first-child{border-top:1px solid var(--line)}
+  .faq details[open]{padding:32px 0}
+  .faq summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:38px 1fr 28px;gap:18px;align-items:center;font-size:18px;font-weight:450;letter-spacing:-.01em;transition:color .25s}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:hover{color:var(--accent)}
+  .faq .num{font-family:"Geist Mono",monospace;font-size:11.5px;color:var(--muted)}
+  .faq .plus{position:relative;width:24px;height:24px;display:grid;place-items:center}
+  .faq .plus::before,.faq .plus::after{content:"";position:absolute;background:var(--ink);transition:transform .35s ease}
+  .faq .plus::before{width:14px;height:1.5px}
+  .faq .plus::after{width:1.5px;height:14px}
+  .faq details[open] .plus::after{transform:scaleY(0)}
+  .faq .answer{padding:14px 0 0 56px;color:var(--ink-2);font-size:15px;line-height:1.65;max-width:60ch}
+
+  /* CTA ───────────────────── */
+  .cta-block{margin:0 var(--pad) clamp(80px,10vw,140px);padding:clamp(60px,8vw,120px) clamp(40px,6vw,80px);background:var(--ink);color:var(--bg);border-radius:14px;position:relative;overflow:hidden}
+  .cta-block::before{content:"";position:absolute;top:-30%;right:-10%;width:50%;aspect-ratio:1;background:radial-gradient(circle, rgba(46,70,54,.5),transparent 65%);pointer-events:none}
+  .cta-block .mono{color:#9A9A92;display:block;margin-bottom:32px}
+  .cta-block h2{font-size:clamp(26px,3.2vw,44px);font-weight:380;letter-spacing:-.022em;line-height:1.05;margin-bottom:32px;max-width:18ch}
+  .cta-block h2 em{font-family:"Newsreader",serif;font-style:italic;color:#A8C49B;font-weight:300}
+  .cta-block .row{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end}
+  @media(max-width:780px){.cta-block .row{grid-template-columns:1fr;gap:28px}}
+  .cta-block p{color:#A8A8A0;max-width:42ch;font-size:16px;line-height:1.55}
+  .cta-block .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .cta-block .btn{background:var(--bg);color:var(--ink);padding:14px 24px;font-size:14px}
+  .cta-block .btn:hover{background:#A8C49B;color:var(--ink)}
+  .cta-block .btn.ghost{background:transparent;color:var(--bg);border-color:#3A3A36}
+  .cta-block .btn.ghost:hover{background:#1A1A18;color:var(--bg);border-color:#3A3A36}
+
+  /* CONTACT FORM ─────────── */
+  .cta-block .grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:start;position:relative;z-index:1}
+  @media(max-width:880px){.cta-block .grid{grid-template-columns:1fr;gap:40px}}
+  .cta-block .left p{color:#A8A8A0;font-size:17px;line-height:1.55;margin-bottom:32px;max-width:42ch}
+  .cta-block .left p em{font-family:"Newsreader",serif;color:#A8C49B;font-style:italic}
+  .cta-block .quick{display:flex;flex-direction:column;gap:16px;padding-top:24px;border-top:1px solid #2A2A28}
+  .cta-block .quick li{list-style:none;display:grid;grid-template-columns:24px 1fr;gap:16px;align-items:start;font-size:14.5px;color:#D6D6CE}
+  .cta-block .quick li small{display:block;font-family:"Geist Mono",monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#7A7A73;margin-bottom:3px;font-weight:400}
+  .cta-block .quick svg{color:#A8C49B;margin-top:3px}
+  .cta-block .quick a{color:#fff;font-weight:450}
+  .cta-block .quick a:hover{color:#A8C49B}
+
+  .form{background:#16161A;border:1px solid #2A2A28;border-radius:10px;padding:32px;display:flex;flex-direction:column;gap:14px}
+  .form .field{display:flex;flex-direction:column;gap:6px}
+  .form label{font-family:"Geist Mono",monospace;font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:#9A9A92;font-weight:400}
+  .form input,.form select,.form textarea{
+    width:100%;padding:11px 14px;font:inherit;font-size:14.5px;color:var(--bg);
+    background:transparent;border:1px solid #2A2A28;border-radius:6px;
+    transition:border-color .2s, background .2s;
+  }
+  .form input:focus,.form select:focus,.form textarea:focus{outline:0;border-color:#A8C49B;background:#1A1A1E}
+  .form input::placeholder,.form textarea::placeholder{color:#5A5A55}
+  .form textarea{min-height:88px;resize:vertical;font-family:inherit}
+  .form select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%239A9A92' stroke-width='1.5'><path d='m1 1 5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.form .row{grid-template-columns:1fr}}
+  .form .check{display:grid;grid-template-columns:18px 1fr;gap:10px;align-items:start;font-size:12.5px;color:#9A9A92;line-height:1.5;margin-top:4px;cursor:pointer}
+  .form .check input{width:auto;margin-top:2px;accent-color:#A8C49B}
+  .form .check a{color:#A8C49B;text-decoration:underline;text-decoration-color:#3A4A3C;text-underline-offset:3px}
+  .form button[type=submit]{
+    margin-top:6px;padding:14px 22px;background:var(--bg);color:var(--ink);
+    border-radius:999px;font-size:14px;font-weight:500;letter-spacing:-.005em;
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    transition:background .25s, transform .2s;
+  }
+  .form button[type=submit]:hover{background:#A8C49B;transform:translateY(-1px)}
+  .form .legal{font-family:"Geist Mono",monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:#7A7A73;text-align:center;margin-top:6px}
+
+  /* FOOTER ────────────────── */
+  footer{padding:48px 0 28px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+  .foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;margin-bottom:64px}
+  @media(max-width:780px){.foot{grid-template-columns:1fr 1fr;gap:32px}}
+  footer h5{font-size:11.5px;font-family:"Geist Mono",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:16px;font-weight:400}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+  footer ul a{color:var(--ink-2);transition:color .2s}
+  footer ul a:hover{color:var(--ink)}
+  .foot-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;padding-top:24px;border-top:1px solid var(--line);font-size:12px;font-family:"Geist Mono",monospace;letter-spacing:.04em;text-transform:uppercase}
+
+  /* WA float */
+  .wa{position:fixed;right:22px;bottom:22px;z-index:50;width:54px;height:54px;border-radius:50%;background:#22A55A;color:#fff;display:grid;place-items:center;box-shadow:0 8px 24px rgba(34,165,90,.3);transition:transform .25s}
+  .wa:hover{transform:scale(1.08)}
+</style></head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#"><span class="mk"></span>Núñez · Pareja · Romero</a>
+    <nav class="menu">
+      <a href="#areas">Áreas</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#casos">Casos</a>
+      <a href="#testimonios">Clientes</a>
+      <a href="#faq">Preguntas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="head-cta">
+      <span class="tel">+34 952 00 00 00</span>
+      <a class="btn" href="#contacto">Consulta gratis<span class="ic">→</span></a>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">
+        <span class="dot"></span>
+        <span class="mono">Despacho boutique · Calle Larios 5 · Málaga</span>
+      </div>
+      <h1>
+        <span class="l1">Defensa <em>honesta.</em></span>
+        <span class="l2">Sin teatro.</span>
+        <span class="l3"><span class="strike">Sin promesas</span> vacías.</span>
+      </h1>
+    </div>
+    <aside class="hero-side">
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=900&q=80" alt="Equipo">
+        <span class="tag">Disponibilidad ahora</span>
+        <div class="caption"><b>Calle Larios 5, 2ª planta</b>L–V · 9:30 — 19:30 · Guardia 24h penal</div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="hero-bottom">
+    <p>Tres titulares con más de veinticinco años de ejercicio en derecho civil, laboral y penal. <em>Cada cliente conoce a quien le representa</em> — sin pasantes, sin intermediarios, sin tarifas escondidas.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contacto">Primera consulta gratis<span class="ic">→</span></a>
+      <a class="btn ghost" href="#contacto">WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<div class="metrics">
+  <div class="metrics-grid">
+    <div><b>25<span class="unit">años</span></b><span class="mono">— en ejercicio</span></div>
+    <div><b>900<span class="unit">+</span></b><span class="mono">— procedimientos</span></div>
+    <div><b>87<span class="unit">%</span></b><span class="mono">— éxito civil 2025</span></div>
+    <div><b>24<span class="unit">h</span></b><span class="mono">— guardia penal</span></div>
+  </div>
+</div>
+
+<!-- AREAS -->
+<section id="areas" class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="mono">— 01 / Áreas de práctica</span>
+      <h2>Tres áreas. <em>Una vocación.</em></h2>
+    </div>
+    <p class="meta">Llevamos sólo lo que sabemos llevar bien. No somos generalistas — somos especialistas en tres ramas concretas, con respuesta en menos de 24 horas.</p>
+  </div>
+
+  <div class="areas">
+    <article class="area">
+      <div class="head"><span class="num">i.</span><span class="icon">→</span></div>
+      <h3>Civil <em>&</em><br>Tráfico</h3>
+      <p>Asuntos civiles con especial dedicación a accidentes de tráfico, herencias y reclamaciones a aseguradoras. Defendemos lo que es suyo cuando alguien decide que no.</p>
+      <ul><li>Tráfico</li><li>Herencias</li><li>Contratos</li><li>Banca</li><li>Arrendamientos</li></ul>
+      <a class="arr">Conocer área <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 5h12m-4-4 4 4-4 4"/></svg></a>
+    </article>
+
+    <article class="area">
+      <div class="head"><span class="num">ii.</span><span class="icon">→</span></div>
+      <h3>Laboral <em>&</em><br>Seg. Social</h3>
+      <p>Despidos, incapacidades y accidentes de trabajo. Donde más se decide su economía familiar — y donde más cuenta tener a alguien que sepa.</p>
+      <ul><li>Despidos</li><li>Incapacidades</li><li>Acc. trabajo</li><li>SMAC</li><li>Mutuas</li></ul>
+      <a class="arr">Conocer área <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 5h12m-4-4 4 4-4 4"/></svg></a>
+    </article>
+
+    <article class="area">
+      <div class="head"><span class="num">iii.</span><span class="icon">→</span></div>
+      <h3>Penal <em>&</em><br>Seg. Vial</h3>
+      <p>Asistencia 24 horas a detenidos. Defensa firme y discreta — juicios sin teatro. Vial, patrimonio, violencia doméstica.</p>
+      <ul><li>Detenidos 24h</li><li>Vial</li><li>Patrimonio</li><li>V. doméstica</li></ul>
+      <a class="arr">Conocer área <svg width="14" height="10" viewBox="0 0 14 10" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M1 5h12m-4-4 4 4-4 4"/></svg></a>
+    </article>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section id="equipo" class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="mono">— 02 / Equipo</span>
+      <h2>Tres titulares.<br>Tres <em>firmas</em> distintas.</h2>
+    </div>
+    <p class="meta">Un abogado y dos abogadas con trayectorias propias. Cada caso lo lleva quien firma — sin pasantes, sin intermediarios, sin sorpresas en sala.</p>
+  </div>
+
+  <div class="team">
+
+    <article class="person">
+      <div class="person-photo">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&h=1125&q=80" alt="Andrés Núñez Lara">
+        <span class="idx">N · 01 / III</span>
+        <span class="area-tag">Penal</span>
+      </div>
+      <div class="person-info">
+        <span class="num">— 01</span>
+        <h3>Andrés <em>Núñez</em><br>Lara</h3>
+        <div class="role">Penal &amp; Seguridad Vial</div>
+        <p>Veintisiete años en jurisdicción penal. Más de seiscientos procedimientos. Defensor de oficio durante una década. Lleva personalmente las guardias 24 horas.</p>
+        <div class="meta">
+          <div><span class="mono">— Años en sala</span><b>27</b></div>
+          <div><span class="mono">— Procedimientos</span><b>600+</b></div>
+          <div><span class="mono">— ICAMÁLAGA</span><b>4421</b></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="person">
+      <div class="person-photo">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&h=1125&q=80" alt="Lucía Pareja Ortega">
+        <span class="idx">N · 02 / II</span>
+        <span class="area-tag">Laboral</span>
+      </div>
+      <div class="person-info">
+        <span class="num">— 02</span>
+        <h3>Lucía <em>Pareja</em><br>Ortega</h3>
+        <div class="role">Laboral &amp; Seguridad Social</div>
+        <p>Veinte años defendiendo trabajadores en despidos, incapacidades y accidentes laborales. Premio del ICAMÁLAGA 2019 al mejor procedimiento laboral. Atiende también en inglés y francés.</p>
+        <div class="meta">
+          <div><span class="mono">— Años en sala</span><b>20</b></div>
+          <div><span class="mono">— Premio</span><b>ICAMÁLAGA '19</b></div>
+          <div><span class="mono">— ICAMÁLAGA</span><b>5108</b></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="person">
+      <div class="person-photo">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&h=1125&q=80" alt="Carmen Romero Salas">
+        <span class="idx">N · 03 / I</span>
+        <span class="area-tag">Civil</span>
+      </div>
+      <div class="person-info">
+        <span class="num">— 03</span>
+        <h3>Carmen <em>Romero</em><br>Salas</h3>
+        <div class="role">Civil &amp; Familia</div>
+        <p>Diecinueve años en derecho civil con foco en tráfico, herencias y derecho bancario. Mediadora civil y mercantil colegiada. Acompaña casos largos sin perder la calma — ni a usted.</p>
+        <div class="meta">
+          <div><span class="mono">— Años en sala</span><b>19</b></div>
+          <div><span class="mono">— Casos civiles</span><b>500+</b></div>
+          <div><span class="mono">— ICAMÁLAGA</span><b>5742</b></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CASES -->
+<div class="cases-wrap" id="casos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <span class="mono">— 03 / Casos resueltos</span>
+        <h2>Cifras reales.<br><em>Sin grandilocuencia.</em></h2>
+      </div>
+      <p class="meta">Algunos resultados anonimizados de los últimos doce meses. La cifra se basta sola.</p>
+    </div>
+
+    <div class="cases">
+      <article class="case">
+        <span class="tag">— Civil · Tráfico</span>
+        <div class="num">75.000<em>€</em></div>
+        <h4>Indemnización por lesiones medulares</h4>
+        <p>Aseguradora ofrecía 18.000€. Sentencia favorable tras pericial médica independiente y reconstrucción del siniestro.</p>
+        <span class="ref">Juzgado 1ª Inst. nº 4 — Málaga · 2025</span>
+      </article>
+      <article class="case">
+        <span class="tag">— Laboral · Despido</span>
+        <div class="num">Improcedente</div>
+        <h4>Despido nulo por embarazo</h4>
+        <p>Readmisión y abono de salarios de tramitación. La empresa alegó causas objetivas; el TSJ Andalucía confirmó la nulidad por discriminación.</p>
+        <span class="ref">TSJ Andalucía — Sec. Social · 2025</span>
+      </article>
+      <article class="case">
+        <span class="tag">— Penal · Vial</span>
+        <div class="num">Absolución</div>
+        <h4>Conducción bajo influencia</h4>
+        <p>Defectos en la cadena de custodia del control de alcoholemia. Absolución libre tras juicio oral; archivo definitivo.</p>
+        <span class="ref">Juzgado de lo Penal nº 9 — Málaga · 2024</span>
+      </article>
+    </div>
+  </div>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="test-wrap" id="testimonios">
+  <div class="wrap">
+    <div class="sec-head" style="margin-bottom:48px">
+      <div>
+        <span class="mono">— 04 / Clientes</span>
+        <h2>Lo que dicen quienes pasaron <em>por el despacho.</em></h2>
+      </div>
+      <p class="meta">Testimonios reales con consentimiento expreso. RGPD-compliant, autorización firmada en archivo.</p>
+    </div>
+  </div>
+  <div class="test-strip">
+    <article class="test">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Llegué después de un despido, perdida y con miedo. Lucía me lo explicó todo en castellano normal — sin tecnicismos, sin promesas vacías. Recuperamos diecisiete mil euros y la sensación de no estar sola."</blockquote>
+      <div class="who"><div class="avatar">M</div><div><b>María José Rojas</b><small>Despido improcedente · 2025</small></div></div>
+    </article>
+    <article class="test">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Andrés llevó la defensa de mi hijo en un caso de seguridad vial. Discreción absoluta y un trabajo riguroso — no nos sentimos un expediente más. Salimos con absolución."</blockquote>
+      <div class="who"><div class="avatar">F</div><div><b>Francisco Aranda</b><small>Penal vial · 2025</small></div></div>
+    </article>
+    <article class="test">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Tres aseguradoras me dijeron que no había nada que hacer. Carmen consiguió una indemnización que nos cambió el año. Honesta desde la primera consulta."</blockquote>
+      <div class="who"><div class="avatar">P</div><div><b>Pilar Domínguez</b><small>Tráfico · 2024</small></div></div>
+    </article>
+    <article class="test">
+      <div class="stars">★★★★★</div>
+      <blockquote>"Atendieron mi consulta a las once de la noche tras un accidente laboral. Eso ya me dijo todo lo que tenía que saber sobre cómo trabajan."</blockquote>
+      <div class="who"><div class="avatar">J</div><div><b>Juan Manuel Cobo</b><small>Acc. trabajo · 2024</small></div></div>
+    </article>
+  </div>
+  <div class="scroll-hint wrap"><span>Desliza →</span><span class="line"></span><span>04 testimonios</span></div>
+</div>
+
+<!-- FAQ -->
+<section id="faq" class="wrap">
+  <div class="faq-grid">
+    <div>
+      <span class="mono" style="display:block;margin-bottom:18px">— 05 / Preguntas frecuentes</span>
+      <h2>Las dudas que llegan <em>cada semana.</em></h2>
+      <p class="meta">Contestadas como si estuviéramos sentados frente a usted — porque a la décima vez ya hemos aprendido a explicarlo bien.</p>
+    </div>
+
+    <div class="faq">
+      <details open>
+        <summary><span class="num">01</span><span>¿Cuánto cuesta la primera consulta?</span><span class="plus"></span></summary>
+        <div class="answer">Nada. La primera consulta es gratuita y sin compromiso, presencial o por videollamada. En esa hora valoramos su caso, le explicamos las opciones reales y le decimos honestamente si merece la pena seguir adelante.</div>
+      </details>
+      <details>
+        <summary><span class="num">02</span><span>Me han despedido. ¿Cuánto tiempo tengo para reclamar?</span><span class="plus"></span></summary>
+        <div class="answer">Veinte días hábiles desde la fecha del despido para presentar la papeleta de conciliación en el SMAC. Es un plazo corto e improrrogable — cuanto antes nos llame, mejor podremos preparar la prueba.</div>
+      </details>
+      <details>
+        <summary><span class="num">03</span><span>¿Qué hago tras un accidente de tráfico?</span><span class="plus"></span></summary>
+        <div class="answer">Antes de firmar nada con la aseguradora — y antes de aceptar la primera oferta — pase por el despacho. La oferta inicial casi siempre está por debajo del baremo legal y, una vez firmada, ya no hay vuelta atrás.</div>
+      </details>
+      <details>
+        <summary><span class="num">04</span><span>¿Mi familiar ha sido detenido. Pueden asistirle ahora?</span><span class="plus"></span></summary>
+        <div class="answer">Sí. Tenemos guardia 24h en penal. Llame al teléfono del despacho y le pasaremos directamente con el titular de guardia. La primera asistencia letrada en comisaría es decisiva.</div>
+      </details>
+      <details>
+        <summary><span class="num">05</span><span>¿Trabajan a éxito o cobran honorarios fijos?</span><span class="plus"></span></summary>
+        <div class="answer">Depende del asunto. En reclamaciones civiles y laborales con cuantía clara podemos pactar honorarios variables sobre el resultado. En penal y consultas trabajamos con tarifa fija o presupuesto cerrado. Siempre por escrito y antes de empezar.</div>
+      </details>
+      <details>
+        <summary><span class="num">06</span><span>¿Atienden fuera de Málaga capital?</span><span class="plus"></span></summary>
+        <div class="answer">Sí. Trabajamos toda la provincia: Marbella, Antequera, Estepona, Vélez, Ronda. Para asuntos en otras provincias estudiamos cada caso — a veces compensa desplazarse, a veces es mejor remitirles a un colega de confianza local.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + FORM -->
+<div class="cta-block" id="contacto">
+  <span class="mono">— 06 / Hablemos</span>
+  <h2>Cuéntenos su caso.<br><em>Una hora. Gratis.</em></h2>
+
+  <div class="grid">
+    <div class="left">
+      <p>Sin compromiso, sin tarifas escondidas, sin promesas vacías. Le respondemos en menos de <em>24 horas laborables</em> — y en el día, si llega antes de las dos.</p>
+      <ul class="quick">
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+          <div><small>Teléfono · 24h penal</small><a href="tel:+34952000000">+34 952 00 00 00</a></div>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          <div><small>WhatsApp Business</small><a href="https://wa.me/34952000000">+34 952 00 00 00</a></div>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <div><small>Despacho</small>Calle Larios 5, 2ª planta · 29005 Málaga</div>
+        </li>
+        <li>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          <div><small>Horario</small>L–V · 9:30 — 14:00 · 16:30 — 19:30</div>
+        </li>
+      </ul>
+    </div>
+
+    <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Enviado ✓';this.querySelector('button').disabled=true;">
+      <div class="row">
+        <div class="field">
+          <label for="f-name">Nombre y apellidos</label>
+          <input id="f-name" type="text" required placeholder="Su nombre completo">
+        </div>
+        <div class="field">
+          <label for="f-tel">Teléfono</label>
+          <input id="f-tel" type="tel" required placeholder="612 34 56 78">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-email">Email</label>
+        <input id="f-email" type="email" required placeholder="su@email.com">
+      </div>
+      <div class="field">
+        <label for="f-area">Área de su consulta</label>
+        <select id="f-area" required>
+          <option value="">Seleccione un área</option>
+          <option>Civil — accidente de tráfico</option>
+          <option>Civil — herencia / testamento</option>
+          <option>Civil — otros</option>
+          <option>Laboral — despido</option>
+          <option>Laboral — incapacidad</option>
+          <option>Laboral — accidente de trabajo</option>
+          <option>Penal — detención / asistencia 24h</option>
+          <option>Penal — seguridad vial</option>
+          <option>Penal — otros</option>
+          <option>No estoy seguro/a</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-msg">Cuéntenos brevemente</label>
+        <textarea id="f-msg" placeholder="Sin entrar en detalles sensibles. Sólo lo justo para entender de qué hablamos."></textarea>
+      </div>
+      <label class="check">
+        <input type="checkbox" required>
+        <span>He leído y acepto la <a href="#">política de privacidad</a>. Mis datos se tratan conforme al RGPD y no se ceden a terceros.</span>
+      </label>
+      <button type="submit">Enviar consulta <span>→</span></button>
+      <div class="legal">— Respuesta en menos de 24 h laborables —</div>
+    </form>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="wrap">
+  <div class="foot">
+    <div>
+      <a class="brand" style="margin-bottom:14px"><span class="mk"></span>Núñez · Pareja · Romero</a>
+      <p style="margin-top:18px;max-width:34ch;color:var(--muted);line-height:1.55">Despacho boutique en Málaga. Civil, laboral y penal — defendemos sus derechos con cercanía y rigor desde 1998.</p>
+    </div>
+    <div><h5>Áreas</h5><ul><li><a>Civil — Málaga</a></li><li><a>Laboral — Málaga</a></li><li><a>Penal — Málaga</a></li><li><a>Tráfico</a></li><li><a>Despidos</a></li></ul></div>
+    <div><h5>Despacho</h5><ul><li><a>Equipo</a></li><li><a>Casos</a></li><li><a>FAQ</a></li><li><a>Blog</a></li></ul></div>
+    <div><h5>Legal</h5><ul><li><a>Aviso legal</a></li><li><a>Privacidad</a></li><li><a>Cookies</a></li><li><a>RGPD</a></li></ul></div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 — Núñez · Pareja · Romero</span>
+    <span>Calle Larios 5 · 2ª planta · Málaga</span>
+    <span>ICAMÁLAGA 4421 · 5108 · 5742</span>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/34952000000" aria-label="WhatsApp">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.5 0 .15 5.34.15 11.91a11.85 11.85 0 0 0 1.6 5.96L0 24l6.32-1.66a11.91 11.91 0 0 0 5.7 1.45h.01c6.55 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.41-8.4zM12.05 21.6h-.01a9.86 9.86 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.84 9.84 0 0 1-1.5-5.06c0-5.45 4.43-9.88 9.88-9.88a9.81 9.81 0 0 1 6.99 2.9 9.83 9.83 0 0 1 2.9 6.99c0 5.45-4.44 9.88-9.89 9.88z"/></svg>
+</a>
+
+</body></html>

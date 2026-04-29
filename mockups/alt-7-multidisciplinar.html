@@ -1,0 +1,744 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Núñez·Pareja·Romero — Despacho multidisciplinar de abogados · Málaga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300..800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F8F4ED;
+    --bg-2:#EFE9DC;
+    --bg-card:#FFFFFF;
+    --ink:#0F1217;
+    --ink-2:#3A3F4A;
+    --muted:#7B8090;
+    --line:#E2DACA;
+    --line-2:#CFC5AE;
+    --oxblood:#6B1F2A;
+    --oxblood-2:#54171F;
+    --gold:#A88837;
+    --green:#22A55A;
+    --max:1240px;
+    --pad:clamp(20px,4vw,52px);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  html,body{background:var(--bg);color:var(--ink)}
+  body{font-family:"Manrope",system-ui,sans-serif;font-size:15.5px;line-height:1.6;font-weight:400;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-weight:700;letter-spacing:-.018em;line-height:1.15;color:var(--ink)}
+  .serif,em.s{font-family:"DM Serif Display",serif;font-weight:400;font-style:italic;letter-spacing:0}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font:inherit;cursor:pointer;border:0;background:0}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  ::selection{background:var(--oxblood);color:var(--bg)}
+
+  /* TOP BAR */
+  .topbar{background:var(--ink);color:#A8AEBE;font-size:13px;padding:9px 0;font-weight:500}
+  .topbar .row{display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
+  .topbar a{color:#A8AEBE;display:inline-flex;align-items:center;gap:8px}
+  .topbar a:hover{color:#fff}
+  .topbar .left{display:flex;gap:24px}
+  .topbar .right{display:flex;align-items:center;gap:8px;color:var(--gold)}
+  .topbar .right::before{content:"";width:6px;height:6px;background:var(--green);border-radius:50%;box-shadow:0 0 0 4px rgba(34,165,90,.2)}
+
+  /* HEADER */
+  header{background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30;backdrop-filter:blur(10px)}
+  .nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:32px;padding:20px 0}
+  .brand{display:flex;align-items:baseline;gap:12px}
+  .brand .wordmark{font-family:"DM Serif Display",serif;font-size:26px;letter-spacing:-.01em;color:var(--ink);line-height:1}
+  .brand .wordmark em{font-style:italic;color:var(--oxblood)}
+  .brand .ext{font-family:"Manrope";font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600;border-left:1px solid var(--line-2);padding-left:12px;margin-left:4px}
+  nav.menu{display:flex;gap:30px;justify-content:center;font-size:14.5px;font-weight:600;color:var(--ink-2)}
+  nav.menu a{padding:6px 0;transition:color .25s;position:relative}
+  nav.menu a:hover{color:var(--oxblood)}
+  nav.menu a::after{content:"";position:absolute;left:50%;right:50%;bottom:-3px;height:2px;background:var(--oxblood);transition:left .3s,right .3s}
+  nav.menu a:hover::after{left:0;right:0}
+  .head-cta{display:flex;align-items:center;gap:10px}
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;padding:11px 22px;
+    background:var(--oxblood);color:#fff;font-size:13.5px;font-weight:600;
+    border-radius:0;transition:all .25s;letter-spacing:.02em;text-transform:uppercase;
+    border:1.5px solid var(--oxblood);
+  }
+  .btn:hover{background:var(--oxblood-2);border-color:var(--oxblood-2)}
+  .btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--bg)}
+  .btn.wa{background:var(--green);border-color:var(--green)}
+  .btn.wa:hover{background:#1B8C4A;border-color:#1B8C4A}
+  @media(max-width:980px){nav.menu{display:none}}
+
+  /* HERO */
+  .hero{padding:clamp(60px,8vw,120px) 0 0;position:relative}
+  .hero-inner{display:grid;grid-template-columns:1.4fr 1fr;gap:64px;align-items:center}
+  @media(max-width:980px){.hero-inner{grid-template-columns:1fr;gap:40px}}
+  .hero .meta{display:flex;align-items:center;gap:14px;margin-bottom:32px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .hero .meta::before{content:"";width:48px;height:1px;background:var(--oxblood)}
+  .hero h1{
+    font-family:"DM Serif Display",serif;font-weight:400;
+    font-size:clamp(38px,5.4vw,76px);line-height:1.04;letter-spacing:-.02em;margin-bottom:28px;
+  }
+  .hero h1 em{font-style:italic;color:var(--oxblood)}
+  .hero h1 .underline{position:relative;display:inline-block}
+  .hero h1 .underline::after{
+    content:"";position:absolute;left:-2%;right:-2%;bottom:6%;height:2px;
+    background:var(--oxblood);transform:scaleX(0);transform-origin:left;animation:un 1s .5s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  @keyframes un{to{transform:scaleX(1)}}
+  .hero p.lead{font-size:17px;color:var(--ink-2);max-width:54ch;line-height:1.55;margin-bottom:36px;font-weight:400}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+  .cta-row .btn{padding:14px 26px;font-size:13.5px}
+  .cta-row .also{font-size:13.5px;color:var(--muted);margin-left:8px}
+  .cta-row .also a{color:var(--oxblood);font-weight:600;border-bottom:1px solid var(--oxblood)}
+
+  /* HERO BADGE — años de experiencia */
+  .years-card{position:relative}
+  .years-circle{
+    aspect-ratio:1;width:100%;max-width:380px;margin:0 auto;
+    background:var(--ink);color:var(--bg);border-radius:50%;
+    display:grid;place-items:center;text-align:center;padding:40px;
+    position:relative;overflow:hidden;
+  }
+  .years-circle::before{
+    content:"";position:absolute;inset:14px;border:1px solid rgba(255,255,255,.18);border-radius:50%;
+  }
+  .years-circle::after{
+    content:"";position:absolute;top:-30%;right:-30%;width:80%;height:80%;border-radius:50%;
+    background:radial-gradient(circle,rgba(168,136,55,.25),transparent 60%);
+  }
+  .years-circle .num{font-family:"DM Serif Display",serif;font-style:italic;font-size:clamp(80px,10vw,140px);font-weight:400;line-height:1;color:#fff;letter-spacing:-.04em;margin-bottom:8px;position:relative}
+  .years-circle .num span{color:var(--gold)}
+  .years-circle .label{font-size:12px;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:#A8AEBE;position:relative}
+  .years-circle .sub{font-size:14px;margin-top:14px;color:#fff;font-weight:500;font-style:italic;font-family:"DM Serif Display",serif;position:relative}
+
+  .years-tag{
+    position:absolute;left:0;bottom:24px;background:var(--bg-card);border:1px solid var(--line);
+    padding:14px 18px;display:flex;align-items:center;gap:14px;border-radius:0;
+    box-shadow:0 8px 24px -10px rgba(15,18,23,.18);
+  }
+  .years-tag .ic{width:38px;height:38px;background:var(--oxblood);color:#fff;display:grid;place-items:center;border-radius:50%}
+  .years-tag b{display:block;font-size:14px;color:var(--ink);font-weight:700}
+  .years-tag small{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+
+  /* TICKER under hero */
+  .ticker{margin-top:clamp(50px,7vw,90px);background:var(--ink);color:var(--bg);position:relative;overflow:hidden}
+  .ticker-wrap{display:flex;align-items:center;gap:48px;padding:18px 0;font-family:"DM Serif Display",serif;font-style:italic;font-size:18px;color:#D4DBED;white-space:nowrap}
+  .ticker-wrap .item{display:inline-flex;align-items:center;gap:12px}
+  .ticker-wrap .item::before{content:"§";color:var(--gold);font-size:22px;font-style:normal;font-family:"Manrope";font-weight:300}
+  .ticker-wrap .item b{font-style:normal;font-family:"Manrope";color:#fff;font-weight:700;letter-spacing:-.01em;font-size:16px}
+
+  /* SECTIONS */
+  section{padding:clamp(80px,10vw,140px) 0}
+  .sec-head{display:grid;grid-template-columns:auto 1fr;gap:64px;margin-bottom:60px;align-items:end}
+  @media(max-width:880px){.sec-head{grid-template-columns:1fr;gap:18px;margin-bottom:40px}}
+  .sec-head .label{display:flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--oxblood);font-weight:700;margin-bottom:14px}
+  .sec-head .label::before{content:"";width:40px;height:1px;background:var(--oxblood)}
+  .sec-head h2{font-family:"DM Serif Display",serif;font-weight:400;font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.018em;max-width:18ch}
+  .sec-head h2 em{font-style:italic;color:var(--oxblood)}
+  .sec-head .meta{color:var(--ink-2);font-size:15.5px;max-width:46ch;justify-self:end}
+  @media(max-width:880px){.sec-head .meta{justify-self:start}}
+
+  /* 6 SERVICES GRID */
+  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  @media(max-width:880px){.services{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.services{grid-template-columns:1fr}}
+  .service{
+    background:var(--bg-card);padding:36px 30px 32px;display:flex;flex-direction:column;gap:14px;
+    transition:background .35s, transform .35s;cursor:pointer;position:relative;overflow:hidden;
+  }
+  .service:hover{background:var(--bg-2)}
+  .service::before{
+    content:"";position:absolute;left:0;top:0;width:4px;height:100%;background:var(--oxblood);
+    transform:scaleY(0);transform-origin:top;transition:transform .4s ease;
+  }
+  .service:hover::before{transform:scaleY(1)}
+  .service .head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+  .service .ico{
+    width:48px;height:48px;border-radius:50%;background:var(--bg-2);
+    color:var(--oxblood);display:grid;place-items:center;flex-shrink:0;
+    transition:background .3s, color .3s;
+  }
+  .service:hover .ico{background:var(--oxblood);color:#fff}
+  .service .num{font-family:"DM Serif Display",serif;font-style:italic;color:var(--gold);font-size:22px;line-height:1}
+  .service h3{font-size:21px;font-weight:700;letter-spacing:-.015em;line-height:1.2;margin-top:6px}
+  .service p{font-size:14px;color:var(--ink-2);line-height:1.55;flex:1}
+  .service .arr{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--oxblood);font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    margin-top:6px;
+  }
+  .service .arr::after{content:"→";transition:transform .25s}
+  .service:hover .arr::after{transform:translateX(4px)}
+
+  /* WHY US — 4 column block */
+  .why-bg{background:var(--ink);color:var(--bg)}
+  .why-bg .sec-head h2{color:#fff}
+  .why-bg .sec-head h2 em{color:var(--gold)}
+  .why-bg .sec-head .label{color:var(--gold)}
+  .why-bg .sec-head .label::before{background:var(--gold)}
+  .why-bg .sec-head .meta{color:#A8AEBE}
+  .why{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+  @media(max-width:880px){.why{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.why{grid-template-columns:1fr}}
+  .why > div{padding:32px 28px;border-right:1px solid #2A2E38}
+  .why > div:last-child{border-right:0}
+  @media(max-width:880px){.why > div:nth-child(2){border-right:0}.why > div:nth-child(-n+2){border-bottom:1px solid #2A2E38}}
+  .why .roman{font-family:"DM Serif Display",serif;font-style:italic;color:var(--gold);font-size:16px;margin-bottom:16px}
+  .why h4{color:#fff;font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+  .why p{font-size:14px;color:#A8AEBE;line-height:1.55}
+
+  /* TEAM — wide horizontal photo + 3 portraits */
+  .team-photo{
+    position:relative;aspect-ratio:21/9;border-radius:0;overflow:hidden;
+    background:linear-gradient(135deg,var(--ink),#1A1F2A);margin-bottom:60px;
+  }
+  .team-photo img{width:100%;height:100%;object-fit:cover;filter:brightness(.92) contrast(1.05) saturate(.9)}
+  .team-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,18,23,.55),transparent 40%,transparent 60%,rgba(15,18,23,.55))}
+  .team-photo .caption{
+    position:absolute;left:32px;bottom:28px;color:#fff;max-width:380px;
+  }
+  .team-photo .caption .label{color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+  .team-photo .caption .label::before{content:"";width:30px;height:1px;background:var(--gold)}
+  .team-photo .caption .q{font-family:"DM Serif Display",serif;font-style:italic;font-size:22px;line-height:1.3;color:#fff}
+  .team-photo .credit{position:absolute;right:24px;bottom:24px;color:#A8AEBE;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:600}
+
+  .team{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:880px){.team{grid-template-columns:1fr;gap:32px}}
+  .person{background:var(--bg-card);border:1px solid var(--line);overflow:hidden;transition:transform .35s, box-shadow .35s,border-color .35s}
+  .person:hover{transform:translateY(-4px);box-shadow:0 24px 48px -20px rgba(15,18,23,.16);border-color:var(--oxblood)}
+  .person figure{margin:0;aspect-ratio:5/6;overflow:hidden;background:var(--bg-2);position:relative}
+  .person figure img{width:100%;height:100%;object-fit:cover;filter:contrast(1.04) saturate(.92);transition:transform .8s, filter .4s}
+  .person:hover figure img{transform:scale(1.04);filter:contrast(1.08) saturate(1)}
+  .person .area-mark{
+    position:absolute;top:18px;left:18px;background:var(--bg-card);
+    color:var(--ink);font-size:11px;font-weight:700;padding:5px 11px;letter-spacing:.08em;text-transform:uppercase;
+  }
+  .person .body{padding:24px}
+  .person .num{font-family:"DM Serif Display",serif;font-style:italic;color:var(--gold);font-size:14px;margin-bottom:8px}
+  .person h3{font-size:21px;font-weight:700;margin-bottom:4px;letter-spacing:-.015em}
+  .person .role{font-family:"DM Serif Display",serif;font-style:italic;font-size:15px;color:var(--oxblood);margin-bottom:14px}
+  .person p{font-size:14px;color:var(--ink-2);line-height:1.55;margin-bottom:16px}
+  .person .meta{display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);padding-top:14px;border-top:1px solid var(--line)}
+  .person .meta b{color:var(--ink);font-weight:700}
+  .person .meta a{color:var(--oxblood);font-weight:700}
+
+  /* TESTIMONIALS */
+  .test-bg{background:var(--bg-2)}
+  .test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  @media(max-width:880px){.test-grid{grid-template-columns:1fr}}
+  .test{
+    background:var(--bg-card);border:1px solid var(--line);padding:28px;position:relative;
+    display:flex;flex-direction:column;gap:14px;
+  }
+  .test .verified{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;color:#1B8C4A;padding:4px 10px;background:rgba(34,165,90,.1);text-transform:uppercase;letter-spacing:.04em;align-self:flex-start}
+  .test .stars{color:var(--gold);font-size:14px;letter-spacing:2px}
+  .test blockquote{font-family:"DM Serif Display",serif;font-size:18px;line-height:1.42;color:var(--ink);font-weight:400;flex:1}
+  .test .who{display:flex;align-items:center;gap:12px;padding-top:14px;border-top:1px solid var(--line)}
+  .test .avatar{width:42px;height:42px;border-radius:50%;background:var(--oxblood);color:#fff;display:grid;place-items:center;font-family:"DM Serif Display";font-style:italic;font-size:18px}
+  .test:nth-child(2) .avatar{background:var(--gold)}
+  .test:nth-child(3) .avatar{background:var(--ink)}
+  .test .who b{display:block;font-size:14px;color:var(--ink);font-weight:700}
+  .test .who small{font-size:12px;color:var(--muted)}
+
+  /* CONTACT — large form left, info+map right */
+  .contact-grid{
+    display:grid;grid-template-columns:1.1fr 1fr;gap:0;
+    background:var(--bg-card);border:1px solid var(--line);
+  }
+  @media(max-width:980px){.contact-grid{grid-template-columns:1fr}}
+  .contact-form{padding:48px}
+  .contact-form .label{color:var(--oxblood);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;margin-bottom:14px;display:block}
+  .contact-form h3{font-family:"DM Serif Display",serif;font-weight:400;font-size:32px;letter-spacing:-.015em;margin-bottom:8px;line-height:1.1}
+  .contact-form h3 em{font-style:italic;color:var(--oxblood)}
+  .contact-form > p{color:var(--ink-2);font-size:14.5px;margin-bottom:30px;max-width:42ch}
+  .form{display:flex;flex-direction:column;gap:14px}
+  .form label{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2);font-weight:700;margin-bottom:6px;display:block}
+  .form input,.form select,.form textarea{
+    width:100%;padding:13px 14px;font:inherit;font-size:14.5px;color:var(--ink);
+    background:var(--bg);border:1px solid var(--line);border-radius:0;
+    transition:border-color .2s, background .2s;
+  }
+  .form input:focus,.form select:focus,.form textarea:focus{outline:0;border-color:var(--oxblood);background:#fff}
+  .form input::placeholder,.form textarea::placeholder{color:var(--muted)}
+  .form textarea{min-height:96px;resize:vertical;font-family:inherit}
+  .form select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none' stroke='%237B8090' stroke-width='1.5'><path d='m1 1 5 5 5-5'/></svg>");background-repeat:no-repeat;background-position:right 14px center;padding-right:34px}
+  .form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:520px){.form .row{grid-template-columns:1fr}}
+  .form .check{display:grid;grid-template-columns:18px 1fr;gap:10px;font-size:12.5px;color:var(--muted);line-height:1.5;cursor:pointer;margin-top:4px}
+  .form .check input{width:auto;margin-top:2px;accent-color:var(--oxblood)}
+  .form .check a{color:var(--oxblood);font-weight:600;border-bottom:1px solid var(--oxblood)}
+  .form button[type=submit]{
+    margin-top:8px;padding:15px;background:var(--oxblood);color:#fff;
+    font-size:13.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+    border:1.5px solid var(--oxblood);transition:all .25s;
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  }
+  .form button[type=submit]:hover{background:transparent;color:var(--oxblood)}
+
+  .contact-side{background:var(--ink);color:#fff;padding:48px;display:flex;flex-direction:column}
+  .contact-side h4{color:#fff;font-family:"DM Serif Display",serif;font-weight:400;font-size:24px;margin-bottom:8px}
+  .contact-side h4 em{font-style:italic;color:var(--gold)}
+  .contact-side > p{color:#A8AEBE;font-size:14px;margin-bottom:28px;line-height:1.55}
+  .c-list{list-style:none;display:flex;flex-direction:column;gap:18px;margin-bottom:auto}
+  .c-list li{display:grid;grid-template-columns:36px 1fr;gap:14px;align-items:start}
+  .c-list .ic{width:36px;height:36px;background:rgba(168,136,55,.18);color:var(--gold);display:grid;place-items:center;flex-shrink:0;border-radius:50%}
+  .c-list small{display:block;font-size:11px;color:#A8AEBE;letter-spacing:.06em;text-transform:uppercase;margin-bottom:3px;font-weight:600}
+  .c-list a, .c-list span{color:#fff;font-weight:600;font-size:14.5px}
+  .c-list a:hover{color:var(--gold)}
+  .map-mini{margin-top:32px;height:200px;background:var(--bg-2);position:relative;overflow:hidden}
+  .map-mini iframe{width:100%;height:100%;border:0;filter:saturate(.85) brightness(.9)}
+  .map-mini .pin{position:absolute;top:14px;left:14px;background:var(--bg-card);color:var(--ink);font-size:12px;font-weight:700;padding:6px 12px;display:flex;align-items:center;gap:8px}
+  .map-mini .pin::before{content:"";width:6px;height:6px;background:var(--oxblood);border-radius:50%}
+  .map-link{display:inline-flex;align-items:center;gap:8px;color:var(--gold);font-weight:700;font-size:13px;margin-top:14px;text-transform:uppercase;letter-spacing:.06em}
+
+  /* CTA strip */
+  .cta-strip{background:var(--oxblood);color:#fff;padding:60px 0;position:relative;overflow:hidden}
+  .cta-strip::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80% 50%,rgba(168,136,55,.18),transparent 50%);pointer-events:none}
+  .cta-strip-inner{position:relative;display:grid;grid-template-columns:1.4fr auto;gap:40px;align-items:center}
+  @media(max-width:780px){.cta-strip-inner{grid-template-columns:1fr;text-align:center}}
+  .cta-strip h2{font-family:"DM Serif Display",serif;font-weight:400;font-size:clamp(26px,3.4vw,42px);line-height:1.1;color:#fff;margin-bottom:8px}
+  .cta-strip h2 em{font-style:italic;color:var(--gold)}
+  .cta-strip p{color:#E5D6D8;font-size:15px;max-width:46ch}
+  .cta-strip .row{display:flex;gap:10px;flex-wrap:wrap}
+  @media(max-width:780px){.cta-strip .row{justify-content:center}}
+  .cta-strip .btn{background:#fff;color:var(--oxblood);border-color:#fff}
+  .cta-strip .btn:hover{background:transparent;color:#fff}
+  .cta-strip .btn.wa{background:var(--green);color:#fff;border-color:var(--green)}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:#A8AEBE;padding:60px 0 24px;font-size:13.5px}
+  .foot{display:grid;grid-template-columns:1.5fr repeat(3,1fr);gap:48px;margin-bottom:48px}
+  @media(max-width:780px){.foot{grid-template-columns:1fr 1fr}}
+  footer h5{color:#fff;font-family:"DM Serif Display",serif;font-style:italic;font-size:18px;font-weight:400;margin-bottom:18px}
+  footer h5 em{color:var(--gold);font-style:normal;font-family:"Manrope";font-size:13px;letter-spacing:.04em;font-weight:600;margin-right:6px}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer ul a:hover{color:var(--gold)}
+  .foot-brand .name{color:#fff;font-family:"DM Serif Display",serif;font-size:24px;letter-spacing:-.01em;margin-bottom:14px}
+  .foot-brand .name em{font-style:italic;color:var(--gold)}
+  .foot-brand p{margin-bottom:18px;line-height:1.55;max-width:36ch}
+  .foot-bottom{padding-top:24px;border-top:1px solid #2A2E38;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12.5px}
+
+  /* WhatsApp Float */
+  .wa-float{position:fixed;right:20px;bottom:20px;z-index:50;width:60px;height:60px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -8px rgba(34,165,90,.5);transition:transform .25s}
+  .wa-float:hover{transform:scale(1.1)}
+  .wa-float::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:2px solid var(--green);animation:pulse 2s ease-out infinite;opacity:.6}
+  @keyframes pulse{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.4);opacity:0}}
+</style></head>
+<body>
+
+<div class="topbar"><div class="wrap row">
+  <div class="left">
+    <a href="tel:+34952000000">📞 <b>+34 952 00 00 00</b></a>
+    <a href="mailto:contacto@nunezparejaromero.es">✉ contacto@nunezparejaromero.es</a>
+  </div>
+  <div class="right">Despacho abierto · 24 h en penal</div>
+</div></div>
+
+<header><div class="wrap nav">
+  <a class="brand" href="#">
+    <span class="wordmark">Núñez<em>·</em>Pareja<em>·</em>Romero</span>
+    <span class="ext">Abogados<br>Málaga · 1998</span>
+  </a>
+  <nav class="menu">
+    <a href="#servicios">Servicios</a>
+    <a href="#por-que">Por qué nosotros</a>
+    <a href="#equipo">Equipo</a>
+    <a href="#testimonios">Clientes</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <div class="head-cta">
+    <a class="btn ghost" href="https://wa.me/34952000000">WhatsApp</a>
+    <a class="btn" href="#contacto">Consúltenos</a>
+  </div>
+</div></header>
+
+<!-- HERO -->
+<section class="hero"><div class="wrap hero-inner">
+  <div>
+    <div class="meta">Despacho multidisciplinar · Calle Larios · Málaga</div>
+    <h1>Buscamos <em>soluciones eficaces</em> para problemas <span class="underline">complejos.</span></h1>
+    <p class="lead">Despacho boutique con tres titulares y más de 25 años de ejercicio en derecho civil, laboral y penal. Atendemos a personas y pequeñas empresas con honestidad: le decimos lo que se puede ganar — y lo que no.</p>
+    <div class="cta-row">
+      <a class="btn" href="#contacto">Consúltenos hoy →</a>
+      <a class="btn ghost" href="https://wa.me/34952000000">💬 WhatsApp</a>
+      <span class="also">o llame al <a href="tel:+34952000000">952 00 00 00</a></span>
+    </div>
+  </div>
+
+  <aside class="years-card">
+    <div class="years-circle">
+      <div class="num">25<span>+</span></div>
+      <div class="label">— Años de ejercicio —</div>
+      <div class="sub">Tres titulares · Una vocación</div>
+    </div>
+    <div class="years-tag">
+      <div class="ic">★</div>
+      <div>
+        <b>Más de 900 casos</b>
+        <small>resueltos en Málaga y provincia</small>
+      </div>
+    </div>
+  </aside>
+</div></section>
+
+<div class="ticker"><div class="wrap"><div class="ticker-wrap">
+  <span class="item"><b>+25 años</b> de ejercicio</span>
+  <span class="item"><b>900+</b> procedimientos</span>
+  <span class="item"><b>87%</b> éxito civil</span>
+  <span class="item">Guardia <b>24h</b> en penal</span>
+  <span class="item">Calle <b>Larios 5</b></span>
+</div></div></div>
+
+<!-- 6 SERVICES -->
+<section id="servicios"><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="label">Servicios</span>
+      <h2>Seis áreas. <em>Una atención personal.</em></h2>
+    </div>
+    <p class="meta">Llevamos los seis tipos de asunto que más nos llegan al despacho. Cada uno con su titular dedicado — sin pasantes, sin intermediarios. Honorarios siempre por escrito antes de empezar.</p>
+  </div>
+
+  <div class="services">
+
+    <article class="service">
+      <div class="head">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 17h14m-14 0v-3l3-7h8l3 7v3"/><circle cx="8" cy="14" r="1.5"/><circle cx="16" cy="14" r="1.5"/></svg></div>
+        <span class="num">i</span>
+      </div>
+      <h3>Accidentes de tráfico</h3>
+      <p>Indemnización completa por lesiones, secuelas y daños. Pericial médica independiente y reclamación a la aseguradora hasta sentencia firme.</p>
+      <span class="arr">Saber más</span>
+    </article>
+
+    <article class="service">
+      <div class="head">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2zM16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <span class="num">ii</span>
+      </div>
+      <h3>Despidos y derecho laboral</h3>
+      <p>Despidos improcedentes, nulos y objetivos. Reclamaciones de cantidad, modificaciones sustanciales, conciliaciones SMAC y recursos.</p>
+      <span class="arr">Saber más</span>
+    </article>
+
+    <article class="service">
+      <div class="head">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 11v-1a4 4 0 0 0-4-4h-1.26a8 8 0 1 0-7.48 0H8a4 4 0 0 0-4 4v1m12 0H8m12 0v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8m16 0h-4m-4 0h-4"/></svg></div>
+        <span class="num">iii</span>
+      </div>
+      <h3>Incapacidades y Seg. Social</h3>
+      <p>Incapacidad temporal, permanente parcial, total, absoluta o gran invalidez. Demandas contra mutuas, recargos, recursos.</p>
+      <span class="arr">Saber más</span>
+    </article>
+
+    <article class="service">
+      <div class="head">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2 4 6v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V6l-8-4z"/></svg></div>
+        <span class="num">iv</span>
+      </div>
+      <h3>Defensa penal · 24 h</h3>
+      <p>Asistencia inmediata a detenidos en comisaría o juzgado. Delitos contra las personas, patrimonio y seguridad vial. Discreción absoluta.</p>
+      <span class="arr">Saber más</span>
+    </article>
+
+    <article class="service">
+      <div class="head">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2zM17 21v-8H7v8M7 3v5h8"/></svg></div>
+        <span class="num">v</span>
+      </div>
+      <h3>Herencias y testamentos</h3>
+      <p>Aceptación, partición, impugnación. Conflictos entre coherederos, legítimas, donaciones y planificación sucesoria.</p>
+      <span class="arr">Saber más</span>
+    </article>
+
+    <article class="service">
+      <div class="head">
+        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg></div>
+        <span class="num">vi</span>
+      </div>
+      <h3>Reclamaciones bancarias</h3>
+      <p>Cláusulas suelo, gastos hipotecarios, IRPH, tarjetas revolving. Reclamación extrajudicial y demanda con costas a cargo del banco.</p>
+      <span class="arr">Saber más</span>
+    </article>
+
+  </div>
+</div></section>
+
+<!-- WHY US -->
+<div class="why-bg" id="por-que"><section><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="label">Por qué nosotros</span>
+      <h2>Cuatro <em>diferencias</em> reales.</h2>
+    </div>
+    <p class="meta">Lo que nos separa de los despachos que se anuncian con los mismos eslóganes. No es marketing — son hechos verificables.</p>
+  </div>
+
+  <div class="why">
+    <div>
+      <div class="roman">— i.</div>
+      <h4>Trato directo con el titular</h4>
+      <p>Su caso lo lleva quien firma — no un pasante. Conocerá personalmente al abogado o abogada que le defenderá.</p>
+    </div>
+    <div>
+      <div class="roman">— ii.</div>
+      <h4>Honorarios por escrito antes</h4>
+      <p>Presupuesto cerrado o porcentaje a éxito según el caso. Siempre antes de empezar. Sin sorpresas, sin extras al final.</p>
+    </div>
+    <div>
+      <div class="roman">— iii.</div>
+      <h4>Equipo paritario</h4>
+      <p>Un abogado y dos abogadas. Tres miradas distintas al mismo asunto — algo poco común en despachos boutique.</p>
+    </div>
+    <div>
+      <div class="roman">— iv.</div>
+      <h4>Disponibilidad 24 h</h4>
+      <p>Guardia activa todo el año en penal. La primera asistencia letrada en comisaría es decisiva — no espere a la mañana.</p>
+    </div>
+  </div>
+</div></section></div>
+
+<!-- TEAM -->
+<section id="equipo"><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="label">Equipo</span>
+      <h2>Tres titulares. <em>Tres miradas</em> al mismo caso.</h2>
+    </div>
+    <p class="meta">Más de 65 años de experiencia conjunta. Cada cliente conoce a quien le representa desde la primera consulta hasta la sentencia.</p>
+  </div>
+
+  <div class="team-photo">
+    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80" alt="Equipo">
+    <div class="caption">
+      <div class="label">Núñez · Pareja · Romero</div>
+      <div class="q">"Defendemos los derechos de personas reales con honestidad y rigor."</div>
+    </div>
+    <span class="credit">Calle Larios · Málaga</span>
+  </div>
+
+  <div class="team">
+    <article class="person">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=80" alt="Andrés">
+        <span class="area-mark">Penal</span>
+      </figure>
+      <div class="body">
+        <span class="num">— i.</span>
+        <h3>Andrés Núñez Lara</h3>
+        <div class="role">Penal & Vial · 27 años</div>
+        <p>Defensor de oficio durante una década. Más de 600 procedimientos. Lleva personalmente las guardias 24 horas.</p>
+        <div class="meta"><b>ICAMÁLAGA · 4421</b><a>LinkedIn ↗</a></div>
+      </div>
+    </article>
+
+    <article class="person">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=80" alt="Lucía">
+        <span class="area-mark">Laboral</span>
+      </figure>
+      <div class="body">
+        <span class="num">— ii.</span>
+        <h3>Lucía Pareja Ortega</h3>
+        <div class="role">Laboral & Seg. Social · 20 años</div>
+        <p>Premio ICAMÁLAGA 2019 al mejor procedimiento laboral. Atiende también en inglés y francés.</p>
+        <div class="meta"><b>ICAMÁLAGA · 5108</b><a>LinkedIn ↗</a></div>
+      </div>
+    </article>
+
+    <article class="person">
+      <figure>
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=80" alt="Carmen">
+        <span class="area-mark">Civil</span>
+      </figure>
+      <div class="body">
+        <span class="num">— iii.</span>
+        <h3>Carmen Romero Salas</h3>
+        <div class="role">Civil & Familia · 19 años</div>
+        <p>Mediadora civil y mercantil colegiada. Foco en tráfico, herencias y derecho bancario. Más de 500 casos civiles.</p>
+        <div class="meta"><b>ICAMÁLAGA · 5742</b><a>LinkedIn ↗</a></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<!-- TESTIMONIALS -->
+<div class="test-bg"><section id="testimonios"><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="label">Lo que dicen los clientes</span>
+      <h2>Más de 900 personas <em>nos han confiado</em> sus casos.</h2>
+    </div>
+    <p class="meta">Testimonios verificados con consentimiento RGPD. Reseñas reales en Google y en archivo del despacho.</p>
+  </div>
+
+  <div class="test-grid">
+    <article class="test">
+      <span class="verified">✓ Cliente verificado</span>
+      <div class="stars">★★★★★</div>
+      <blockquote>"Me lo explicaron todo en castellano normal. Recuperamos 17.000 € en un despido improcedente. Atención personal, sin pasantes."</blockquote>
+      <div class="who"><div class="avatar">M</div><div><b>María José Rojas</b><small>Despido improcedente · 2025</small></div></div>
+    </article>
+    <article class="test">
+      <span class="verified">✓ Cliente verificado</span>
+      <div class="stars">★★★★★</div>
+      <blockquote>"Tres aseguradoras me dijeron que no había nada que hacer. Carmen consiguió 75.000 € de indemnización. Profesionales y honestos."</blockquote>
+      <div class="who"><div class="avatar">P</div><div><b>Pilar Domínguez</b><small>Accidente de tráfico · 2024</small></div></div>
+    </article>
+    <article class="test">
+      <span class="verified">✓ Cliente verificado</span>
+      <div class="stars">★★★★★</div>
+      <blockquote>"Llamé a las 11 de la noche tras un accidente laboral y atendieron al momento. Eso ya me dijo todo lo que necesitaba saber."</blockquote>
+      <div class="who"><div class="avatar">J</div><div><b>Juan Manuel Cobo</b><small>Accidente trabajo · 2024</small></div></div>
+    </article>
+  </div>
+</div></section></div>
+
+<!-- CONTACT -->
+<section id="contacto"><div class="wrap">
+  <div class="sec-head">
+    <div>
+      <span class="label">Contacto</span>
+      <h2>Cuéntenos su caso. <em>Una hora gratis.</em></h2>
+    </div>
+    <p class="meta">Respondemos en menos de 24 h laborables — y en el día si llega antes de las 14:00. Sin compromiso, 100% confidencial.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-form">
+      <span class="label">Solicitud de consulta</span>
+      <h3>Envíenos un <em>mensaje.</em></h3>
+      <p>Le responderá personalmente uno de los tres titulares — el del área que corresponda a su caso.</p>
+
+      <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='✓ Mensaje enviado';this.querySelector('button').disabled=true">
+        <div class="row">
+          <div>
+            <label for="cf-n">Nombre completo</label>
+            <input id="cf-n" type="text" required placeholder="Su nombre">
+          </div>
+          <div>
+            <label for="cf-t">Teléfono</label>
+            <input id="cf-t" type="tel" required placeholder="612 34 56 78">
+          </div>
+        </div>
+        <div>
+          <label for="cf-e">Email</label>
+          <input id="cf-e" type="email" required placeholder="su@email.com">
+        </div>
+        <div>
+          <label for="cf-a">Servicio</label>
+          <select id="cf-a" required>
+            <option value="">Seleccione un servicio</option>
+            <option>Accidentes de tráfico</option>
+            <option>Despido / laboral</option>
+            <option>Incapacidad / Seg. Social</option>
+            <option>Defensa penal · urgente</option>
+            <option>Herencias y testamentos</option>
+            <option>Reclamación bancaria</option>
+            <option>Otro</option>
+          </select>
+        </div>
+        <div>
+          <label for="cf-m">Su mensaje</label>
+          <textarea id="cf-m" required placeholder="Cuéntenos brevemente su caso. Sin entrar en detalles sensibles."></textarea>
+        </div>
+        <label class="check">
+          <input type="checkbox" required>
+          <span>He leído y acepto la <a>política de privacidad</a> y el tratamiento de mis datos según el RGPD. Mis datos no se ceden a terceros.</span>
+        </label>
+        <button type="submit">Enviar consulta →</button>
+      </form>
+    </div>
+
+    <aside class="contact-side">
+      <h4>Despacho en <em>Calle Larios.</em></h4>
+      <p>A un minuto del centro histórico. Atención presencial o por videollamada.</p>
+
+      <ul class="c-list">
+        <li>
+          <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><small>Teléfono · 24 h</small><a href="tel:+34952000000">+34 952 00 00 00</a></div>
+        </li>
+        <li>
+          <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.5 0 .15 5.34.15 11.91a11.85 11.85 0 0 0 1.6 5.96L0 24l6.32-1.66a11.91 11.91 0 0 0 5.7 1.45c6.55 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.41-8.4z"/></svg></div>
+          <div><small>WhatsApp</small><a href="https://wa.me/34952000000">+34 952 00 00 00</a></div>
+        </li>
+        <li>
+          <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><small>Despacho</small><span>Calle Larios 5, 2ª · Málaga</span></div>
+        </li>
+        <li>
+          <div class="ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><small>Horario</small><span>L–V · 9:30—14:00 · 16:30—19:30</span></div>
+        </li>
+      </ul>
+
+      <div class="map-mini">
+        <span class="pin">Calle Larios 5</span>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-4.4250%2C36.7180%2C-4.4170%2C36.7240&amp;layer=mapnik&amp;marker=36.7210,-4.4214" loading="lazy"></iframe>
+      </div>
+      <a class="map-link" href="https://maps.google.com/?q=Calle+Larios+5+Málaga" target="_blank">Cómo llegar en Google Maps →</a>
+    </aside>
+  </div>
+</div></section>
+
+<!-- CTA STRIP -->
+<div class="cta-strip"><div class="wrap cta-strip-inner">
+  <div>
+    <h2>¿Caso urgente? <em>Llámenos ahora.</em></h2>
+    <p>Disponibilidad 24 h en penal. Resto de áreas: respuesta en menos de 24 h laborables.</p>
+  </div>
+  <div class="row">
+    <a class="btn" href="tel:+34952000000">📞 952 00 00 00</a>
+    <a class="btn wa" href="https://wa.me/34952000000">💬 WhatsApp</a>
+  </div>
+</div></div>
+
+<!-- FOOTER -->
+<footer><div class="wrap">
+  <div class="foot">
+    <div class="foot-brand">
+      <div class="name">Núñez<em>·</em>Pareja<em>·</em>Romero</div>
+      <p>Despacho boutique de abogados en Málaga. Civil, laboral y penal. Más de 25 años defendiendo derechos con cercanía y rigor.</p>
+    </div>
+    <div>
+      <h5><em>i.</em>Servicios</h5>
+      <ul>
+        <li><a>Accidentes de tráfico</a></li>
+        <li><a>Despidos</a></li>
+        <li><a>Incapacidades</a></li>
+        <li><a>Penal urgente</a></li>
+        <li><a>Herencias</a></li>
+        <li><a>Reclamaciones bancarias</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5><em>ii.</em>Despacho</h5>
+      <ul>
+        <li><a>Equipo</a></li>
+        <li><a>Casos resueltos</a></li>
+        <li><a>Blog</a></li>
+        <li><a>Preguntas frecuentes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5><em>iii.</em>Legal</h5>
+      <ul>
+        <li><a>Aviso legal</a></li>
+        <li><a>Política de privacidad</a></li>
+        <li><a>Política de cookies</a></li>
+        <li><a>RGPD</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2026 — Núñez · Pareja · Romero · Abogados</span>
+    <span>Calle Larios 5, 2ª · 29005 Málaga</span>
+    <span>ICAMÁLAGA 4421 · 5108 · 5742</span>
+  </div>
+</div></footer>
+
+<a class="wa-float" href="https://wa.me/34952000000" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.52 3.48A11.94 11.94 0 0 0 12.05 0C5.5 0 .15 5.34.15 11.91a11.85 11.85 0 0 0 1.6 5.96L0 24l6.32-1.66a11.91 11.91 0 0 0 5.7 1.45c6.55 0 11.9-5.34 11.9-11.91 0-3.18-1.24-6.17-3.41-8.4z"/></svg>
+</a>
+
+</body></html>

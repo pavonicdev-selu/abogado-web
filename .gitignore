@@ -1,0 +1,29 @@
+# OMC / Claude Code state
+.omc/
+.claude/
+*.log
+
+# Node
+node_modules/
+dist/
+.next/
+.astro/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Build artefactos
+*.zip
